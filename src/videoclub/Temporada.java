@@ -13,8 +13,33 @@ public class Temporada {
     
     private int numeroTemporada, totalCapitols;
     
+    /*
+    *   Constructor.
+    */
+    
     public Temporada(){
         
     }
+    
+    /*
+    *   Getters and Setters
+    */
+
+    public int getNumeroTemporada() {
+        return numeroTemporada;
+    }
+
+    public void setNumeroTemporada(int numeroTemporada) {
+        this.numeroTemporada = numeroTemporada;
+    }
+
+    public int getTotalCapitols() {
+        return totalCapitols;
+    }
+
+    public void setTotalCapitols(int totalCapitols) {
+        this.totalCapitols = totalCapitols;
+    }
+    
     
 }
