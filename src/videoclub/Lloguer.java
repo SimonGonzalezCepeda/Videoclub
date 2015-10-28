@@ -7,7 +7,7 @@ package videoclub;
 
 /**
  *
- * @author sylver
+ * @author Simón & Pau
  */
 public class Lloguer {
     
@@ -41,6 +41,10 @@ public class Lloguer {
     public void MostrarDisponibilitat(){
         
     }
+    
+    /*
+    *   Getters & Setters
+    */
 
     public String getNom() {
         return nom;
