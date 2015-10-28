@@ -11,6 +11,8 @@ package videoclub;
  */
 public class Temporada {
     
+    private int numeroTemporada, totalCapitols;
+    
     public Temporada(){
         
     }
