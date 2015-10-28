@@ -11,9 +11,15 @@ package videoclub;
  */
 public class Videoclub {
 
-    /**
-     * @param args the command line arguments
-     */
+    public Usuari usuari;
+    public Lloguer lloguer;
+    
+    public Videoclub(){
+        usuari = new Usuari();
+        lloguer = new Lloguer();
+    }
+    
+    
     public static void main(String[] args) {
         // TODO code application logic here
     }
