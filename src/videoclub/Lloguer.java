@@ -32,6 +32,10 @@ public class Lloguer {
     }
     
     /*
+    *   Funcions
+    */
+    
+    /*
     *   Aquesta funció s'encarrega de que al llogar o retorna un item (peli o serie)
     *   la boolear disponible cambie mostrant la seva disponibilitat de forma correcta.
     *

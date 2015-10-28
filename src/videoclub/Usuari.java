@@ -32,6 +32,10 @@ public class Usuari {
     }
     
     /*
+    *   Funcions
+    */
+    
+    /*
     *   Aquest mètode s'encarrega de registrar un Usuari.
     *
     */
