@@ -11,9 +11,27 @@ package videoclub;
  */
 public class Usuari {
     
+    private String nom = new String();
     
+    private String cognoms = new String();
+    
+    private String dni = new String();
+    
+    private String direccio = new String();
+    
+    private String ciutat = new String();
+    
+    private int telefon, numTargeta, codiPostal;
     
     public Usuari(){
+        
+    }
+    
+    public void Registrar(){
+        
+    }
+    
+    public void Editar(){
         
     }
     

@@ -27,4 +27,8 @@ public class Lloguer {
         
     }
     
+    public void MostrarDisponibilitat(){
+        
+    }
+    
 }
