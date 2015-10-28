@@ -11,6 +11,10 @@ package videoclub;
  */
 public class Pelicula extends Lloguer {
     
+    /*
+    *   Constructor
+    */
+    
     public Pelicula (){
         
     }

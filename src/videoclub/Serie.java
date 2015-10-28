@@ -15,8 +15,34 @@ public class Serie extends Lloguer {
     
     private int totalTemporades;
     
+    /*
+    *   Constructor.
+    */
+    
     public Serie(){
         
     }
     
+    /*
+    *   Getters & Setters
+    */
+
+    public boolean isEmissio() {
+        return emissio;
+    }
+
+    public void setEmissio(boolean emissio) {
+        this.emissio = emissio;
+    }
+
+    public int getTotalTemporades() {
+        return totalTemporades;
+    }
+
+    public void setTotalTemporades(int totalTemporades) {
+        this.totalTemporades = totalTemporades;
+    }
+    
+    
+            
 }
