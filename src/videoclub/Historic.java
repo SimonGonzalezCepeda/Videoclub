@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package videoclub;
+import java.util.Date;
 
 /**
  *
@@ -11,12 +12,29 @@ package videoclub;
  */
 public class Historic {
     
+    private Date diaLloguer = new Date();
+    
+    private Date diaEntrega = new Date();
+    
     public Usuari usuari;
+    
     public Lloguer lloguer;
     
     public Historic (Usuari usuari, Lloguer lloguer){
         this.usuari = usuari;
         this.lloguer = lloguer;
+    }
+    
+    public void Llogar(){
+        
+    }
+    
+    public void Entregar(){
+        
+    }
+    
+    public void DesarHistoric(){
+        
     }
     
 }
