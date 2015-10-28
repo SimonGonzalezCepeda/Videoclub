@@ -11,4 +11,8 @@ package videoclub;
  */
 public class Pelicula {
     
+    public Pelicula (){
+        
+    }
+    
 }

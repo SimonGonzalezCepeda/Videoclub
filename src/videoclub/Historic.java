@@ -9,22 +9,14 @@ package videoclub;
  *
  * @author sylver
  */
-public class Lloguer {
+public class Historic {
     
-    private String nom = new String();
+    public Usuari usuari;
+    public Lloguer lloguer;
     
-    public Lloguer(){
-        
+    public Historic (Usuari usuari, Lloguer lloguer){
+        this.usuari = usuari;
+        this.lloguer = lloguer;
     }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-    
-    
     
 }
