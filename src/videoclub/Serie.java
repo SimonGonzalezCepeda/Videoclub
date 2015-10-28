@@ -9,7 +9,11 @@ package videoclub;
  *
  * @author sylver
  */
-public class Serie {
+public class Serie extends Lloguer {
+    
+    private boolean emissio = true; 
+    
+    private int totalTemporades;
     
     public Serie(){
         

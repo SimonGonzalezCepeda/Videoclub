@@ -9,7 +9,7 @@ package videoclub;
  *
  * @author sylver
  */
-public class Pelicula {
+public class Pelicula extends Lloguer {
     
     public Pelicula (){
         
