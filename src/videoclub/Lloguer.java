@@ -19,8 +19,12 @@ public class Lloguer {
     
     private String productora = new String();
     
-    int any;
+    private int any;
     
-    boolean disponible = true; // Creem que en principi sempre tindrem un item.
+    private boolean disponible = true; // Creem que en principi sempre tindrem un item.
+    
+    public Lloguer(){
+        
+    }
     
 }

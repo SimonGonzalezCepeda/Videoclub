@@ -11,6 +11,8 @@ package videoclub;
  */
 public class Usuari {
     
+    
+    
     public Usuari(){
         
     }
