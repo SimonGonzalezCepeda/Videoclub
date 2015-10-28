@@ -13,18 +13,14 @@ public class Lloguer {
     
     private String nom = new String();
     
-    public Lloguer(){
-        
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
+    private String categoria = new String();
     
+    private String sinopsis = new String();
     
+    private String productora = new String();
+    
+    int any;
+    
+    boolean disponible = true; // Creem que en principi sempre tindrem un item.
     
 }

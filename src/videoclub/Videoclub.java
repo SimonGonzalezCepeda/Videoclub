@@ -19,6 +19,25 @@ public class Videoclub {
         lloguer = new Lloguer();
     }
     
+    public void buscarLloguer(){
+        
+    }
+    
+    public void loguejar(){
+        
+    }
+    
+    public void carregarBD(){
+        
+    }
+    
+    public void desarBD(){
+        
+    }
+    
+    public void filtrarContingut(){
+        
+    }
     
     public static void main(String[] args) {
         // TODO code application logic here
