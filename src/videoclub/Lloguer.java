@@ -23,12 +23,71 @@ public class Lloguer {
     
     private boolean disponible = true; // Creem que en principi sempre tindrem un item.
     
+    /*
+    *   Constructor
+    */
+    
     public Lloguer(){
         
     }
     
+    /*
+    *   Aquesta funció s'encarrega de que al llogar o retorna un item (peli o serie)
+    *   la boolear disponible cambie mostrant la seva disponibilitat de forma correcta.
+    *
+    */
+    
+    
     public void MostrarDisponibilitat(){
         
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public String getSinopsis() {
+        return sinopsis;
+    }
+
+    public void setSinopsis(String sinopsis) {
+        this.sinopsis = sinopsis;
+    }
+
+    public String getProductora() {
+        return productora;
+    }
+
+    public void setProductora(String productora) {
+        this.productora = productora;
+    }
+
+    public int getAny() {
+        return any;
+    }
+
+    public void setAny(int any) {
+        this.any = any;
+    }
+
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
     }
     
 }
