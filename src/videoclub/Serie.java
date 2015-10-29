@@ -5,6 +5,8 @@
  */
 package videoclub;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author sylver
@@ -15,12 +17,16 @@ public class Serie extends Lloguer {
     
     private int totalTemporades;
     
+    ArrayList<Temporada> temporadas;
+    
     /*
     *   Constructor.
     */
     
     public Serie(){
-        
+        //hem d'afegir les temporades.
+        temporadas = new ArrayList<Temporada>();
+        temporadas.add();
     }
     
     /*
