@@ -4,10 +4,13 @@
  * and open the template in the editor.
  */
 package videoclub;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *
- * @author sylver
+ * @author Simón i Pau
  */
 public class Videoclub {
 
@@ -30,9 +33,17 @@ public class Videoclub {
     /*
     *   Métode per a cercar els continguts de l'aplicació.
     *
+    *   @args: int;
+    *   @return: ArrayList <String>;
     */
     
-    public void buscarLloguer(){
+    public ArrayList <String> buscarLloguer(){
+           
+        ArrayList <String> lista = new ArrayList<String>(); //carregarBD();
+            
+        Collections.sort(lista);
+        
+        return lista;
         
     }
     
@@ -52,6 +63,10 @@ public class Videoclub {
     
     public void carregarBD(){
         
+        int i;
+        
+        
+        
     }
     
     /*
@@ -67,11 +82,17 @@ public class Videoclub {
     *
     */
     public void filtrarContingut(){
-        
+                
     }
     
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        Videoclub aplicacio = new Videoclub();
+        
+        System.out.print(aplicacio.buscarLloguer());
+        
+        
     }
     
 }
