@@ -159,6 +159,18 @@ public class Videoclub {
         boBoBo.setEmissio(false);
         boBoBo.setTotalTemporades(2);
         
+        
+        Usuari admin = new Usuari();
+        
+        admin.setNom("admin");
+        admin.setCiutat("Internet");
+        admin.setCodiPostal(6666);
+        admin.setCognoms("strador");
+        admin.setDireccio("www.google.com");
+        admin.setDni("127.0.0.1");
+        admin.setNumTargeta(0000000000007);
+        admin.setTelefon(687969314);
+        
         if (shingekiNoKyojin instanceof Serie){
             System.out.print(shingekiNoKyojin);
         }
