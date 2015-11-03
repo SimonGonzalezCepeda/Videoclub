@@ -9,7 +9,7 @@ package videoclub;
  *
  * @author sylver
  */
-public class Temporada {
+public class Temporada extends Serie {
     
     private int numeroTemporada, totalCapitols;
     

@@ -38,7 +38,6 @@ public class Videoclub {
     */
     
     public void buscarLloguer(){
-           
         
     }
     
@@ -84,7 +83,7 @@ public class Videoclub {
     
     public static void main(String[] args) {
         // TODO code application logic here
-        
+               
     }
     
 }
