@@ -23,16 +23,24 @@ public class Serie extends Lloguer {
     *   Constructor.
     */
     
-    public Serie(){
+    public Serie(){    
+                   
+    }
+    
+    public void afegirTemporada(Temporada t){
         //hem d'afegir les temporades.
-        temporadas = new ArrayList<Temporada>();
-        temporadas.add();
+        temporadas.add(t);
+                   
     }
     
     /*
     *   Getters & Setters
     */
 
+    public ArrayList<Temporada> getTemporadas() {
+        return temporadas;
+    }
+    
     public boolean isEmissio() {
         return emissio;
     }
