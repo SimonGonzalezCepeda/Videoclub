@@ -24,7 +24,9 @@ public class Serie extends Lloguer {
     */
     
     public Serie(){    
-                   
+        
+        temporadas = new ArrayList<Temporada>();
+        
     }
     
     public void afegirTemporada(Temporada t){
