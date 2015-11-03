@@ -144,6 +144,8 @@ public class Videoclub {
         shingekiNoKyojin.setEmissio(true);
         shingekiNoKyojin.setTotalTemporades(2);
         
+        
+        
         boBoBo.setNom("Bobobo");
         boBoBo.setCategoria("Humor");
         boBoBo.setDisponible(true);
@@ -159,6 +161,15 @@ public class Videoclub {
         boBoBo.setEmissio(false);
         boBoBo.setTotalTemporades(2);
         
+        int i;
+        for (i=1;i<=boBoBo.getTotalTemporades();i++){
+            
+            Temporada tempora = new Temporada();
+            tempora.setNumeroTemporada(i);
+            tempora.setNom("Temporada " + i);
+            tempora.setTotalCapitols(32);       
+            boBoBo.afegirTemporada(tempora);
+        }
         
         Usuari admin = new Usuari();
         

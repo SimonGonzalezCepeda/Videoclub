@@ -17,18 +17,30 @@ public class Serie extends Lloguer {
     
     private int totalTemporades;
     
+    ArrayList<Temporada> temporadas;
+    
     /*
     *   Constructor.
     */
     
     public Serie(){    
-                 
+                
+    }
+    
+    public void afegirTemporada(Temporada t){
+        //hem d'afegir les temporades.
+        temporadas.add(t);
+                   
     }
     
     /*
     *   Getters & Setters
     */
 
+    public ArrayList<Temporada> getTemporadas() {
+        return temporadas;
+    }
+    
     public boolean isEmissio() {
         return emissio;
     }
