@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package videoclub;
-import java.io.*;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -17,86 +17,77 @@ public class Videoclub {
 
     public Usuari usuari;
     public Lloguer lloguer;
-    
+
     /*
-    *   Constructor
-    */
-    
-    public Videoclub(){
+     *   Constructor
+     */
+    public Videoclub() {
         usuari = new Usuari();
         lloguer = new Lloguer();
     }
-    
+
     /*
-    *   Funcuions.
-    */
-    
+     *   Funcuions.
+     */
     /*
-    *   Métode per a cercar els continguts de l'aplicació.
-    *
-    *   @args: int;
-    *   @return: ArrayList <String>;
-    */
-    
-    public ArrayList <String> buscarLloguer(){
-           
-        ArrayList <String> lista = new ArrayList<String>(); //carregarBD();
-            
+     *   Métode per a cercar els continguts de l'aplicació.
+     *
+     *   @args: int;
+     *   @return: ArrayList <String>;
+     */
+    public ArrayList<String> buscarLloguer() {
+
+        ArrayList<String> lista = new ArrayList<String>(); //carregarBD();
+
         Collections.sort(lista);
-        
+
         return lista;
-        
+
     }
-    
+
     /*
-    *   Mètode per a que els usuaris es puguin conectar.
-    *
-    */
-    
-    public void loguejar(){
-        
+     *   Mètode per a que els usuaris es puguin conectar.
+     *
+     */
+    public void loguejar() {
+
     }
-    
+
     /*
-    *   Mètode amb el que es carrega tota l'informació en variables.
-    *
-    */
-    
-    public void carregarBD(){
-        
+     *   Mètode amb el que es carrega tota l'informació en variables.
+     *
+     */
+    public void carregarBD() {
+
         int i;
-        
-        
-        
+
     }
-    
+
     /*
-    *   Mètode amb el que es desa tota l'informació en variables.
-    *
-    */
-    public void desarBD(){
-        
-        
-        
+     *   Mètode amb el que es desa tota l'informació en variables.
+     *
+     */
+    public void desarBD() {
+
     }
-    
+
     /*
-    *   Mètode amb el que filtrem els continguts de les búsquedes.
-    *
-    */
-    public void filtrarContingut(){
-                
+     *   Mètode amb el que filtrem els continguts de les búsquedes.
+     *
+     */
+    public void filtrarContingut() {
+
     }
-    
+
     public static void main(String[] args) {
         // TODO code application logic here
-        
+
         Videoclub aplicacio = new Videoclub();
-        
+
         System.out.print(aplicacio.buscarLloguer());
-        
+
         Pelicula dragonBallZBattleOfGods = new Pelicula();
-        
+
         dragonBallZBattleOfGods.setNom("Dragon Ball Z: Battle of Gods");
         dragonBallZBattleOfGods.setSinopsis("Algunos años después de la batalla con Majin Buu, Bils, el dios de la destrucción,"
                 + " encargado de mantener el equilibrio del universo, se ha despertado de un largo sueño. Al escuchar rumores sobre"
@@ -106,9 +97,9 @@ public class Videoclub {
         dragonBallZBattleOfGods.setCategoria("Aventura");
         dragonBallZBattleOfGods.setDisponible(true);
         dragonBallZBattleOfGods.setAny(2013);
-        
+
         Pelicula onePieceBattleOfZ = new Pelicula();
-        
+
         onePieceBattleOfZ.setNom("One Piece: Battle of Z");
         onePieceBattleOfZ.setProductora("Toei");
         onePieceBattleOfZ.setCategoria("Aventura");
@@ -120,11 +111,10 @@ public class Videoclub {
                 + " del Nuevo Mundo. Por otra parte el ex-almirante Aokiji, persigue a los Sombreros de Paja por el Nuevo Mundo,"
                 + " mientras estos deciden enfrentar a Z y a su tripulación con su increíble poder.");
         onePieceBattleOfZ.setAny(2012);
-        
-        
+
         Serie shingekiNoKyojin = new Serie();
         Serie boBoBo = new Serie();
-        
+
         shingekiNoKyojin.setNom("Shingeki no Kyojin");
         shingekiNoKyojin.setCategoria("Acción");
         shingekiNoKyojin.setDisponible(true);
@@ -144,9 +134,7 @@ public class Videoclub {
                 + "en venganza por la muerte de su madre.");
         shingekiNoKyojin.setEmissio(true);
         shingekiNoKyojin.setTotalTemporades(2);
-        
-        
-        
+
         boBoBo.setNom("Bobobo");
         boBoBo.setCategoria("Humor");
         boBoBo.setDisponible(true);
@@ -161,45 +149,82 @@ public class Videoclub {
                 + " de la gente pueda ser libre.");
         boBoBo.setEmissio(false);
         boBoBo.setTotalTemporades(2);
-        
+
         /*
-        *   Codi per a crear temporades. Necesita que l'arraylist estigui incialitzada.
-        *
-        */
-        
-        
+         *  Codi per a crear temporades. Necesita que l'arraylist estigui incialitzada.
+         *  Preguntarà a l'última temporada si està en emisió o no, si está ho desa tal cual,
+         *  si està acabada ens deixa desar els capítols.
+         */
         int i;
-        for (i=1;i<=boBoBo.getTotalTemporades();i++){
-            
+        for (i = 1; i <= boBoBo.getTotalTemporades(); i++) {
+
             Temporada tempora = new Temporada();
             tempora.setNumeroTemporada(i);
             tempora.setNom("Temporada " + i);
-            System.out.println("Capítulos de la " + tempora.getNom() + ": \n" );
-            String string;
-            Scanner e = new Scanner (System.in);
-            string = e.nextLine();
-            int y = Integer.parseInt(string);
-            tempora.setTotalCapitols(y);
-            boBoBo.afegirTemporada(tempora);
-        }
+            if (i == boBoBo.getTotalTemporades()) { // Aixó si es l'última
+                System.out.println("\nLa " + tempora.getNom() + " de " + boBoBo.getNom() + " está en emisióbn? (true o false)\n");
+                String string;
+                Scanner e = new Scanner(System.in);
+                string = e.nextLine();
+                boolean si = Boolean.valueOf(string);
+                tempora.setEmissio(si);
+                if (si) { // Aixó si está en emissio
+                    boBoBo.afegirTemporada(tempora);
+                } else { // Aixó si está acabada
+                    System.out.println("\nCapítulos de la " + tempora.getNom() + " de " + boBoBo.getNom() + ": \n");
+                    string = e.nextLine();
+                    int y = Integer.parseInt(string);
+                    tempora.setTotalCapitols(y);
+                    boBoBo.afegirTemporada(tempora);
+                }//endif
+            } else { // Aixó si está acabada
+                tempora.setEmissio(false);
+                System.out.println("\nCapítulos de la " + tempora.getNom() + " de " + boBoBo.getNom() + ": \n");
+                String string;
+                Scanner e = new Scanner(System.in);
+                string = e.nextLine();
+                int y = Integer.parseInt(string);
+                tempora.setTotalCapitols(y);
+                boBoBo.afegirTemporada(tempora);
+            } //endif
+        } //endfor
         
-        
-               
-        Usuari admin = new Usuari();
-        
-        admin.setNom("admin");
-        admin.setCiutat("Internet");
-        admin.setCodiPostal(6666);
-        admin.setCognoms("strador");
-        admin.setDireccio("www.google.com");
-        admin.setDni("127.0.0.1");
-        admin.setNumTargeta(0000000000007);
-        admin.setTelefon(687969314);
-        
-        if (shingekiNoKyojin instanceof Serie){
-            System.out.print(shingekiNoKyojin);
-        }
-        
-    }
-    
-}
+        /*
+         *  Mateixa funció per a shingekiNoKyojin.
+         */
+
+        for (i = 1; i <= shingekiNoKyojin.getTotalTemporades(); i++) {
+            Temporada tempora = new Temporada();
+            tempora.setNumeroTemporada(i);
+            tempora.setNom("Temporada " + i);
+            if (i == shingekiNoKyojin.getTotalTemporades()) { // Aixó si es l'última
+                System.out.println("\nLa " + tempora.getNom() + " de " + shingekiNoKyojin.getNom() + " está en emisióbn? (true o false)\n");
+                String string;
+                Scanner e = new Scanner(System.in);
+                string = e.nextLine();
+                boolean si = Boolean.valueOf(string);
+                tempora.setEmissio(si);
+                if (si) { // Aixó si está en emissio
+                    shingekiNoKyojin.afegirTemporada(tempora);
+                } else { // Aixó si está acabada
+                    System.out.println("\nCapítulos de la " + tempora.getNom() + " de " + shingekiNoKyojin.getNom() + ": \n");
+                    string = e.nextLine();
+                    int y = Integer.parseInt(string);
+                    tempora.setTotalCapitols(y);
+                    shingekiNoKyojin.afegirTemporada(tempora);
+                }//endif
+            } else { // Aixó si está acabada
+                tempora.setEmissio(false);
+                System.out.println("\nCapítulos de la " + tempora.getNom() + " de " + shingekiNoKyojin.getNom() + ": \n");
+                String string;
+                Scanner e = new Scanner(System.in);
+                string = e.nextLine();
+                int y = Integer.parseInt(string);
+                tempora.setTotalCapitols(y);
+                shingekiNoKyojin.afegirTemporada(tempora);
+            } //endif
+        } //endfor
+
+    } //endmain
+
+} //endclass
