@@ -17,7 +17,7 @@ public class Serie extends Lloguer {
     
     private int totalTemporades;
     
-    ArrayList<Temporada> temporadas;
+    ArrayList<Temporada> temporadas = new ArrayList<Temporada>();
     
     /*
     *   Constructor.
