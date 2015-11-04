@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 package videoclub;
+import java.io.Serializable;
 
 /**
  *
  * @author Simón & Pau
  */
-public class Usuari {
+public class Usuari implements Serializable {
     
     private String nom = new String();
     
