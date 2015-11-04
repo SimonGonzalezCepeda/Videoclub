@@ -5,12 +5,13 @@
  */
 package videoclub;
 import java.util.Date;
+import java.io.Serializable;
 
 /**
  *
  * @author sylver
  */
-public class Historic {
+public class Historic implements Serializable {
     
     private Date diaLloguer = new Date();
     
