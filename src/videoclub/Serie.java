@@ -6,25 +6,26 @@
 package videoclub;
 
 import java.util.ArrayList;
+import java.io.Serializable;
 
 /**
  *
  * @author sylver
  */
-public class Serie extends Lloguer {
+public class Serie extends Lloguer implements Serializable {
     
     private boolean emissio = true; 
     
     private int totalTemporades;
     
-    ArrayList<Temporada> temporadas = new ArrayList<Temporada>();
+    ArrayList<Temporada> temporadas;
     
     /*
     *   Constructor.
     */
     
     public Serie(){    
-                
+        this.temporadas = new ArrayList<>();
     }
     
     public void afegirTemporada(Temporada t){
