@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 package videoclub;
+import java.io.Serializable;
 
 /**
  *
  * @author sylver
  */
-public class Pelicula extends Lloguer {
+public class Pelicula extends Lloguer implements Serializable {
     
     /*
     *   Constructor
