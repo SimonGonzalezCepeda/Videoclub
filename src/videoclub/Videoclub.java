@@ -72,13 +72,13 @@ public class Videoclub implements Serializable {
      *
      */
     public void desarBD(ArrayList<Usuari> usuaris, ArrayList<Pelicula> pelicules, ArrayList<Serie> series) throws IOException {
-        String rutaUsr = "../../../BD/usuaris.txt";
-        String rutaPel = "../../../BD/pelicules.txt";
-        String rutaSer = "../../../BD/series.txt";
+        String rutaUsr = "BD/usuaris.txt";
+        String rutaPel = "BD/pelicules.txt";
+        String rutaSer = "BD/series.txt";
         ObjectOutputStream master;
         int i;
         
-        // Creem fitxer per a Usuaris
+        /* Creem fitxer per a Usuaris
         master = new ObjectOutputStream(new FileOutputStream(rutaUsr));
         for(i=0;i<=usuaris.size();i++){
             try{
@@ -86,11 +86,11 @@ public class Videoclub implements Serializable {
             }catch(IOException e){
                 break;
             }//endtry
-        }//endfor
+        }//endfor*/
         
-        // Creem fitxer per a Pelicules
+        //Creem fitxer per a Pelicules
         master = new ObjectOutputStream(new FileOutputStream(rutaPel));
-        for(i=0;i<=pelicules.size();i++){
+        for(i=0;i<=pelicules.size()-1;i++){
             try{
                 master.writeObject(pelicules.get(i));
             }catch(IOException e){
@@ -100,7 +100,7 @@ public class Videoclub implements Serializable {
         
         // Creem fitxer per a Series
         master = new ObjectOutputStream(new FileOutputStream(rutaSer));
-        for(i=0;i<=series.size();i++){
+        for(i=0;i<series.size()-1;i++){
             try{
                 master.writeObject(series.get(i));
             }catch(IOException e){
@@ -118,7 +118,7 @@ public class Videoclub implements Serializable {
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // TODO code application logic here
 
         Videoclub aplicacio = new Videoclub();
