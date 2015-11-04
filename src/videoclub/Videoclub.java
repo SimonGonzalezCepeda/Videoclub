@@ -8,16 +8,16 @@ package videoclub;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Serializable;
+import java.io.ObjectOutputStream;
+import java.io.FileOutputStream;
 
 /**
  *
  * @author Simón i Pau
  */
-public class Videoclub {
+public class Videoclub implements Serializable {
 
     public Usuari usuari;
     public Lloguer lloguer;
@@ -75,22 +75,38 @@ public class Videoclub {
         String rutaUsr = "../../../BD/usuaris.txt";
         String rutaPel = "../../../BD/pelicules.txt";
         String rutaSer = "../../../BD/series.txt";
-        File fitxer;
-        BufferedWriter bw;
+        ObjectOutputStream master;
+        int i;
         
         // Creem fitxer per a Usuaris
-        fitxer = new File(rutaUsr);
-        if(fitxer.exists()) {
-           bw = new BufferedWriter(new FileWriter(fitxer)); // !!*
-        } else {
-            bw = new BufferedWriter(new FileWriter(fitxer));
-            bw.write("Acabo de crear el fichero de texto.");
-        }
-        bw.close();
+        master = new ObjectOutputStream(new FileOutputStream(rutaUsr));
+        for(i=0;i<=usuaris.size();i++){
+            try{
+                master.writeObject(usuaris.get(i));
+            }catch(IOException e){
+                break;
+            }//endtry
+        }//endfor
         
-        // Dessem dades d'usuaris
+        // Creem fitxer per a Pelicules
+        master = new ObjectOutputStream(new FileOutputStream(rutaPel));
+        for(i=0;i<=pelicules.size();i++){
+            try{
+                master.writeObject(pelicules.get(i));
+            }catch(IOException e){
+                break;
+            }//endtry
+        }//endfor
         
-        
+        // Creem fitxer per a Series
+        master = new ObjectOutputStream(new FileOutputStream(rutaSer));
+        for(i=0;i<=series.size();i++){
+            try{
+                master.writeObject(series.get(i));
+            }catch(IOException e){
+                break;
+            }//endtry
+        }//endfor
         
     }
 
@@ -303,7 +319,15 @@ public class Videoclub {
          */
          if (shingekiNoKyojin instanceof Serie){
              System.out.print(shingekiNoKyojin);	
-         }		        
+         }//endif
+         
+         /*
+         *  Codi semi-definitiu.
+         */
+         
+         Videoclub app = new Videoclub();
+         
+         app.desarBD(usuaris, pelicules, series);
 
     } //endmain
 
