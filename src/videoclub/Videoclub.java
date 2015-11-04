@@ -7,6 +7,7 @@ package videoclub;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Scanner;
 
 /**
  *
@@ -161,16 +162,29 @@ public class Videoclub {
         boBoBo.setEmissio(false);
         boBoBo.setTotalTemporades(2);
         
+        /*
+        *   Codi per a crear temporades. Necesita que l'arraylist estigui incialitzada.
+        *
+        */
+        
+        
         int i;
         for (i=1;i<=boBoBo.getTotalTemporades();i++){
             
             Temporada tempora = new Temporada();
             tempora.setNumeroTemporada(i);
             tempora.setNom("Temporada " + i);
-            tempora.setTotalCapitols(32);       
+            System.out.println("Capítulos de la " + tempora.getNom() + ": \n" );
+            String string;
+            Scanner e = new Scanner (System.in);
+            string = e.nextLine();
+            int y = Integer.parseInt(string);
+            tempora.setTotalCapitols(y);
             boBoBo.afegirTemporada(tempora);
         }
         
+        
+               
         Usuari admin = new Usuari();
         
         admin.setNom("admin");
