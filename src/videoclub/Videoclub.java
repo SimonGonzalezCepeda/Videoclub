@@ -8,6 +8,10 @@ package videoclub;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  *
@@ -37,7 +41,7 @@ public class Videoclub {
      */
     public ArrayList<String> buscarLloguer() {
 
-        ArrayList<String> lista = new ArrayList<String>(); //carregarBD();
+        ArrayList<String> lista = new ArrayList<>(); //carregarBD();
 
         Collections.sort(lista);
 
@@ -67,8 +71,27 @@ public class Videoclub {
      *   Mètode amb el que es desa tota l'informació en variables.
      *
      */
-    public void desarBD() {
-
+    public void desarBD(ArrayList<Usuari> usuaris, ArrayList<Pelicula> pelicules, ArrayList<Serie> series) throws IOException {
+        String rutaUsr = "../../../BD/usuaris.txt";
+        String rutaPel = "../../../BD/pelicules.txt";
+        String rutaSer = "../../../BD/series.txt";
+        File fitxer;
+        BufferedWriter bw;
+        
+        // Creem fitxer per a Usuaris
+        fitxer = new File(rutaUsr);
+        if(fitxer.exists()) {
+           bw = new BufferedWriter(new FileWriter(fitxer)); // !!*
+        } else {
+            bw = new BufferedWriter(new FileWriter(fitxer));
+            bw.write("Acabo de crear el fichero de texto.");
+        }
+        bw.close();
+        
+        // Dessem dades d'usuaris
+        
+        
+        
     }
 
     /*
@@ -88,6 +111,10 @@ public class Videoclub {
 
         Pelicula dragonBallZBattleOfGods = new Pelicula();
 
+        /*
+        *   Objectes de Pel.licules
+        */
+        
         dragonBallZBattleOfGods.setNom("Dragon Ball Z: Battle of Gods");
         dragonBallZBattleOfGods.setSinopsis("Algunos años después de la batalla con Majin Buu, Bils, el dios de la destrucción,"
                 + " encargado de mantener el equilibrio del universo, se ha despertado de un largo sueño. Al escuchar rumores sobre"
@@ -111,7 +138,19 @@ public class Videoclub {
                 + " del Nuevo Mundo. Por otra parte el ex-almirante Aokiji, persigue a los Sombreros de Paja por el Nuevo Mundo,"
                 + " mientras estos deciden enfrentar a Z y a su tripulación con su increíble poder.");
         onePieceBattleOfZ.setAny(2012);
+        
+        /*
+        *   ArrayList de Pelicula
+        */
+        
+        ArrayList<Pelicula> pelicules = new ArrayList<>();
+        pelicules.add(dragonBallZBattleOfGods);
+        pelicules.add(onePieceBattleOfZ);
 
+        /*
+        *   Objectes de Serie
+        */
+        
         Serie shingekiNoKyojin = new Serie();
         Serie boBoBo = new Serie();
 
@@ -149,6 +188,18 @@ public class Videoclub {
                 + " de la gente pueda ser libre.");
         boBoBo.setEmissio(false);
         boBoBo.setTotalTemporades(2);
+        
+        /*
+        *   ArrayList de Series
+        */
+        
+        ArrayList<Serie> series = new ArrayList<>();
+        series.add(shingekiNoKyojin);
+        series.add(boBoBo);
+        
+        /*
+        *   D'Objectes i ArrayList de Temporades
+        */
 
         /*
          *  Codi per a crear temporades. Necesita que l'arraylist estigui incialitzada.
@@ -224,6 +275,35 @@ public class Videoclub {
                 shingekiNoKyojin.afegirTemporada(tempora);
             } //endif
         } //endfor
+        
+        /*
+        *   Creació d'Objectes d'Usuari.
+        */
+        
+        Usuari admin = new Usuari();
+         		         
+         admin.setNom("admin");	
+         admin.setCiutat("Internet");
+         admin.setCodiPostal(6666);
+         admin.setCognoms("strador");	
+         admin.setDireccio("www.google.com");
+         admin.setDni("127.0.0.1");
+         admin.setNumTargeta(0000000000007);
+         admin.setTelefon(687969314);
+         
+         /*
+         *  Creació d'ArrayList d'Usuari.
+         */
+         
+         ArrayList<Usuari> usuaris = new ArrayList<>();
+         usuaris.add(admin);
+         
+         /*
+         *  Merda de codi de prova
+         */
+         if (shingekiNoKyojin instanceof Serie){
+             System.out.print(shingekiNoKyojin);	
+         }		        
 
     } //endmain
 
