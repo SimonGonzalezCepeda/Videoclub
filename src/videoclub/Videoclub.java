@@ -24,7 +24,7 @@ public class Videoclub implements Serializable {
 
     public Usuari usuari;
     public Lloguer lloguer;
-
+    
     /*
      *   Constructor
      */
@@ -72,7 +72,7 @@ public class Videoclub implements Serializable {
         int i;
 
         //Llegim fitxer per a Pelicula
-        pelicules = new ArrayList();
+        
         master = new ObjectInputStream(new FileInputStream(rutaPel));
         Pelicula peli;
         while (true) {
@@ -90,10 +90,10 @@ public class Videoclub implements Serializable {
                 break;
             }
         }//endwhile
-        
+                
         
         //Llegim fitxer per a Serie
-        series = new ArrayList();
+       
         master = new ObjectInputStream(new FileInputStream(rutaSer));
         Serie serie;
         while (true) {
@@ -114,7 +114,7 @@ public class Videoclub implements Serializable {
         
         
         //Llegim fitxer per a Usuari
-        usuaris = new ArrayList();
+        
         master = new ObjectInputStream(new FileInputStream(rutaUsr));
         Usuari user;
         while (true) {
@@ -210,17 +210,17 @@ public class Videoclub implements Serializable {
 
         Pelicula onePieceBattleOfZ = new Pelicula();
 
-        onePieceBattleOfZ.setNom("One Piece: Battle of Z");
-        onePieceBattleOfZ.setProductora("Toei");
-        onePieceBattleOfZ.setCategoria("Aventura");
-        onePieceBattleOfZ.setDisponible(true);
-        onePieceBattleOfZ.setSinopsis("Se dice que su poder es comparable al de las Armas Ancestrales, la \"carta de triunfo\" de la Marine,"
-                + " \"La Piedra Dyna\", fue robada. El responsable es el temido y terriblemente poderoso, ex-Almirante de la Marine,"
-                + " un hombre llamado \"Z\", quien se cruza en el camino de los Piratas del Sombrero de Paja.\n El Cuartel General de la "
-                + "Marine se mueve hacia adelante para hacer frente a esta conspiración, que es capaz de hacer temblar los pilares"
-                + " del Nuevo Mundo. Por otra parte el ex-almirante Aokiji, persigue a los Sombreros de Paja por el Nuevo Mundo,"
-                + " mientras estos deciden enfrentar a Z y a su tripulación con su increíble poder.");
-        onePieceBattleOfZ.setAny(2012);
+//        onePieceBattleOfZ.setNom("One Piece: Battle of Z");
+//        onePieceBattleOfZ.setProductora("Toei");
+//        onePieceBattleOfZ.setCategoria("Aventura");
+//        onePieceBattleOfZ.setDisponible(true);
+//        onePieceBattleOfZ.setSinopsis("Se dice que su poder es comparable al de las Armas Ancestrales, la \"carta de triunfo\" de la Marine,"
+//                + " \"La Piedra Dyna\", fue robada. El responsable es el temido y terriblemente poderoso, ex-Almirante de la Marine,"
+//                + " un hombre llamado \"Z\", quien se cruza en el camino de los Piratas del Sombrero de Paja.\n El Cuartel General de la "
+//                + "Marine se mueve hacia adelante para hacer frente a esta conspiración, que es capaz de hacer temblar los pilares"
+//                + " del Nuevo Mundo. Por otra parte el ex-almirante Aokiji, persigue a los Sombreros de Paja por el Nuevo Mundo,"
+//                + " mientras estos deciden enfrentar a Z y a su tripulación con su increíble poder.");
+//        onePieceBattleOfZ.setAny(2012);
 
         /*
          *   ArrayList de Pelicula
@@ -391,6 +391,14 @@ public class Videoclub implements Serializable {
         dragonBallZBattleOfGods = pelicules.get(0);
         
         System.out.println(dragonBallZBattleOfGods.getNom());
+        
+        onePieceBattleOfZ = pelicules.get(1);
+        
+        System.out.println(onePieceBattleOfZ.getNom());
+        
+        admin = usuaris.get(0);
+        
+        System.out.println(admin.getNom());
         
         //app.desarBD(usuaris, pelicules, series);
     } //endmain
