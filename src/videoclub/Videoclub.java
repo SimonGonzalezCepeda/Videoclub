@@ -14,6 +14,7 @@ import java.io.ObjectOutputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.FileInputStream;
+import java.io.*;
 
 /**
  *
@@ -63,27 +64,75 @@ public class Videoclub implements Serializable {
      *   Mètode amb el que es carrega tota l'informació en variables.
      *
      */
-    public int carregarBD(ArrayList<Pelicula> pelicules) throws IOException, ClassNotFoundException {
+    public void carregarBD(ArrayList<Pelicula> pelicules, ArrayList<Usuari> usuaris, ArrayList<Serie> series) throws IOException {
         String rutaUsr = "BD/usuaris.txt";
         String rutaPel = "BD/pelicules.txt";
         String rutaSer = "BD/series.txt";
         ObjectInputStream master;
         int i;
-        //Creem fitxer per a Usuaris
+
+        //Llegim fitxer per a Pelicula
         pelicules = new ArrayList();
         master = new ObjectInputStream(new FileInputStream(rutaPel));
-        if (master.readObject() instanceof Pelicula) {
-            Object objecte = master.readObject();
-            while (objecte != null) {
-                objecte = master.readObject();
-                i = 0;
-                i++;
-                return i;                
+        Pelicula peli;
+        while (true) {
+            try {
+                peli = (Pelicula) master.readObject();
+                pelicules.add(peli);
+            } catch (FileNotFoundException e) {
+                System.out.println("\nEl fichero no existe o esta vacio!\n");
+                break;
+            } catch (ClassNotFoundException e) {
+                System.out.println("\nNo se ha encontrdo la clase readObject!\n");
+                break;
+            } catch (Exception e) {
+                System.out.println("\nSe ha leído el fichero pelicules.txt\n");
+                break;
             }
         }//endwhile
-        master.close();
-        return -1;
-
+        
+        
+        //Llegim fitxer per a Serie
+        series = new ArrayList();
+        master = new ObjectInputStream(new FileInputStream(rutaSer));
+        Serie serie;
+        while (true) {
+            try {
+                serie = (Serie) master.readObject();
+                series.add(serie);
+            } catch (FileNotFoundException e) {
+                System.out.println("\nEl fichero no existe o esta vacio!\n");
+                break;
+            } catch (ClassNotFoundException e) {
+                System.out.println("\nNo se ha encontrdo la clase readObject!\n");
+                break;
+            } catch (Exception e) {
+                System.out.println("\nSe ha leído el fichero series.txt\n");
+                break;
+            }
+        }//endwhile
+        
+        
+        //Llegim fitxer per a Usuari
+        usuaris = new ArrayList();
+        master = new ObjectInputStream(new FileInputStream(rutaUsr));
+        Usuari user;
+        while (true) {
+            try {
+                user = (Usuari) master.readObject();
+                usuaris.add(user);
+            } catch (FileNotFoundException e) {
+                System.out.println("\nEl fichero no existe o esta vacio!\n");
+                break;
+            } catch (ClassNotFoundException e) {
+                System.out.println("\nNo se ha encontrdo la clase readObject!\n");
+                break;
+            } catch (Exception e) {
+                System.out.println("\nSe ha leído el fichero usuaris.txt\n");
+                break;
+            }
+        }//endwhile
+        
     }
 
     /*
@@ -148,16 +197,16 @@ public class Videoclub implements Serializable {
 
         /*
          *   Objectes de Pel.licules
-         */
-        dragonBallZBattleOfGods.setNom("Dragon Ball Z: Battle of Gods");
-        dragonBallZBattleOfGods.setSinopsis("Algunos años después de la batalla con Majin Buu, Bils, el dios de la destrucción,"
-                + " encargado de mantener el equilibrio del universo, se ha despertado de un largo sueño. Al escuchar rumores sobre"
-                + " un saiyajin que ha vencido a Freezer, Bils parte a la búsqueda de Goku. Emocionado por el hecho de que haya aparecido,"
-                + " después de tanto tiempo, un oponente tan poderoso, Goku ignora las advertencias de Kaito y decide enfrentarse a él.");
-        dragonBallZBattleOfGods.setProductora("Toei Animation");
-        dragonBallZBattleOfGods.setCategoria("Aventura");
-        dragonBallZBattleOfGods.setDisponible(true);
-        dragonBallZBattleOfGods.setAny(2013);
+//         */
+//        dragonBallZBattleOfGods.setNom("Dragon Ball Z: Battle of Gods");
+//        dragonBallZBattleOfGods.setSinopsis("Algunos años después de la batalla con Majin Buu, Bils, el dios de la destrucción,"
+//                + " encargado de mantener el equilibrio del universo, se ha despertado de un largo sueño. Al escuchar rumores sobre"
+//                + " un saiyajin que ha vencido a Freezer, Bils parte a la búsqueda de Goku. Emocionado por el hecho de que haya aparecido,"
+//                + " después de tanto tiempo, un oponente tan poderoso, Goku ignora las advertencias de Kaito y decide enfrentarse a él.");
+//        dragonBallZBattleOfGods.setProductora("Toei Animation");
+//        dragonBallZBattleOfGods.setCategoria("Aventura");
+//        dragonBallZBattleOfGods.setDisponible(true);
+//        dragonBallZBattleOfGods.setAny(2013);
 
         Pelicula onePieceBattleOfZ = new Pelicula();
 
@@ -336,12 +385,14 @@ public class Videoclub implements Serializable {
          *  Codi semi-definitiu.
          */
         Videoclub app = new Videoclub();
-
+        
+        app.carregarBD(pelicules, usuaris, series);
+        
+        dragonBallZBattleOfGods = pelicules.get(0);
+        
+        System.out.println(dragonBallZBattleOfGods.getNom());
+        
         //app.desarBD(usuaris, pelicules, series);
-        app.carregarBD(pelicules);
-
-//        System.out.println(app.carregarBD(pelicules));
-
     } //endmain
 
 } //endclass
