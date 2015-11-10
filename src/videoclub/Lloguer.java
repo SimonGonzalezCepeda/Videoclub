@@ -4,12 +4,14 @@
  * and open the template in the editor.
  */
 package videoclub;
+import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
  * @author Simón & Pau
  */
-public class Lloguer {
+public class Lloguer implements Serializable{
     
     private String nom = new String();
     
@@ -22,6 +24,8 @@ public class Lloguer {
     private int any;
     
     private boolean disponible = true; // Creem que en principi sempre tindrem un item.
+    
+    ArrayList <Usuari> usuaris;
     
     /*
     *   Constructor
