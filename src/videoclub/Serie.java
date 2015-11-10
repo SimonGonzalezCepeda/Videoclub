@@ -12,7 +12,7 @@ import java.io.Serializable;
  *
  * @author sylver
  */
-public class Serie extends Lloguer implements Serializable {
+public class Serie extends Lloguer {
     
     private boolean emissio = true; 
     
