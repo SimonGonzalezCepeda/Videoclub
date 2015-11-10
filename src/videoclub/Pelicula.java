@@ -10,7 +10,7 @@ import java.io.Serializable;
  *
  * @author sylver
  */
-public class Pelicula extends Lloguer implements Serializable {
+public class Pelicula extends Lloguer {
     
     /*
     *   Constructor
