@@ -5,6 +5,7 @@
  */
 package videoclub;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -23,6 +24,8 @@ public class Usuari implements Serializable {
     private String ciutat = new String();
     
     private int telefon, numTargeta, codiPostal;
+    
+    ArrayList <Lloguer> lloguers;
     
     /*
     *   Constructor
