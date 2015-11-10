@@ -22,6 +22,9 @@ import java.io.*;
  */
 public class Videoclub implements Serializable {
 
+    public static String rutaUsr = "BD/usuaris.bin";
+    public static String rutaPel = "BD/pelicules.bin";
+    public static String rutaSer = "BD/series.bin";
     public Usuari usuari;
     public Lloguer lloguer;
     
@@ -59,33 +62,32 @@ public class Videoclub implements Serializable {
     public void loguejar() {
 
     }
-
+    
     /*
      *   Mètode amb el que es carrega tota l'informació en variables.
      *
      */
-    public void carregarBD(ArrayList<Pelicula> pelicules, ArrayList<Usuari> usuaris, ArrayList<Serie> series) throws IOException {
-        String rutaUsr = "BD/usuaris.txt";
-        String rutaPel = "BD/pelicules.txt";
-        String rutaSer = "BD/series.txt";
+    static public void carregarBD(ArrayList<Usuari> usuaris, ArrayList<Pelicula> pelicules, ArrayList<Serie> series) throws IOException {
         ObjectInputStream master;
-        int i;
+        int i=0;
 
         //Llegim fitxer per a Pelicula
         
         master = new ObjectInputStream(new FileInputStream(rutaPel));
         Pelicula peli;
+        
         while (true) {
             try {
                 peli = (Pelicula) master.readObject();
                 pelicules.add(peli);
+                System.out.println("chivato");
             } catch (FileNotFoundException e) {
                 System.out.println("\nEl fichero no existe o esta vacio!\n");
                 break;
             } catch (ClassNotFoundException e) {
                 System.out.println("\nNo se ha encontrdo la clase readObject!\n");
                 break;
-            } catch (Exception e) {
+            } catch (EOFException e) {
                 System.out.println("\nSe ha leído el fichero pelicules.txt\n");
                 break;
             }
@@ -106,11 +108,13 @@ public class Videoclub implements Serializable {
             } catch (ClassNotFoundException e) {
                 System.out.println("\nNo se ha encontrdo la clase readObject!\n");
                 break;
-            } catch (Exception e) {
+            } catch (EOFException e) {
                 System.out.println("\nSe ha leído el fichero series.txt\n");
                 break;
             }
         }//endwhile
+        
+
         
         
         //Llegim fitxer per a Usuari
@@ -127,22 +131,27 @@ public class Videoclub implements Serializable {
             } catch (ClassNotFoundException e) {
                 System.out.println("\nNo se ha encontrdo la clase readObject!\n");
                 break;
-            } catch (Exception e) {
-                System.out.println("\nSe ha leído el fichero usuaris.txt\n");
+            } catch (EOFException e) {
+                //System.out.println("\nSe ha leído el fichero usuaris.txt\n");
                 break;
             }
         }//endwhile
         
     }
 
+
     /*
      *   Mètode amb el que es desa tota l'informació en variables.
      *
      */
-    public void desarBD(ArrayList<Usuari> usuaris, ArrayList<Pelicula> pelicules, ArrayList<Serie> series) throws IOException {
-        String rutaUsr = "BD/usuaris.txt";
-        String rutaPel = "BD/pelicules.txt";
-        String rutaSer = "BD/series.txt";
+
+
+    
+    /*
+     *   Mètode amb el que es desa tota l'informació en variables.
+     *
+     */
+    static public void desarBD(ArrayList<Usuari> usuaris, ArrayList<Pelicula> pelicules, ArrayList<Serie> series) throws IOException {
         ObjectOutputStream master;
         int i;
 
@@ -152,6 +161,7 @@ public class Videoclub implements Serializable {
             try {
                 master.writeObject(usuaris.get(i));
             } catch (IOException e) {
+                System.out.println("Error!");
                 break;
             }//endtry
         }//endfor
@@ -162,6 +172,7 @@ public class Videoclub implements Serializable {
             try {
                 master.writeObject(pelicules.get(i));
             } catch (IOException e) {
+                System.out.println("Error!");
                 break;
             }//endtry
         }//endfor
@@ -172,6 +183,7 @@ public class Videoclub implements Serializable {
             try {
                 master.writeObject(series.get(i));
             } catch (IOException e) {
+                System.out.println("Error!");
                 break;
             }//endtry
         }//endfor
@@ -189,49 +201,53 @@ public class Videoclub implements Serializable {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         // TODO code application logic here
 
-        Videoclub aplicacio = new Videoclub();
-
-        System.out.print(aplicacio.buscarLloguer());
-
-        Pelicula dragonBallZBattleOfGods = new Pelicula();
+        
 
         /*
          *   Objectes de Pel.licules
-//         */
-//        dragonBallZBattleOfGods.setNom("Dragon Ball Z: Battle of Gods");
-//        dragonBallZBattleOfGods.setSinopsis("Algunos años después de la batalla con Majin Buu, Bils, el dios de la destrucción,"
-//                + " encargado de mantener el equilibrio del universo, se ha despertado de un largo sueño. Al escuchar rumores sobre"
-//                + " un saiyajin que ha vencido a Freezer, Bils parte a la búsqueda de Goku. Emocionado por el hecho de que haya aparecido,"
-//                + " después de tanto tiempo, un oponente tan poderoso, Goku ignora las advertencias de Kaito y decide enfrentarse a él.");
-//        dragonBallZBattleOfGods.setProductora("Toei Animation");
-//        dragonBallZBattleOfGods.setCategoria("Aventura");
-//        dragonBallZBattleOfGods.setDisponible(true);
-//        dragonBallZBattleOfGods.setAny(2013);
+         */
+        
+        Pelicula dragonBallZBattleOfGods = new Pelicula();
+        
+        dragonBallZBattleOfGods.setNom("Dragon Ball Z: Battle of Gods");
+        dragonBallZBattleOfGods.setSinopsis("Algunos años después de la batalla con Majin Buu, Bils, el dios de la destrucción,"
+                + " encargado de mantener el equilibrio del universo, se ha despertado de un largo sueño. Al escuchar rumores sobre"
+                + " un saiyajin que ha vencido a Freezer, Bils parte a la búsqueda de Goku. Emocionado por el hecho de que haya aparecido,"
+                + " después de tanto tiempo, un oponente tan poderoso, Goku ignora las advertencias de Kaito y decide enfrentarse a él.");
+        dragonBallZBattleOfGods.setProductora("Toei Animation");
+        dragonBallZBattleOfGods.setCategoria("Aventura");
+        dragonBallZBattleOfGods.setDisponible(true);
+        dragonBallZBattleOfGods.setAny(2013);
 
         Pelicula onePieceBattleOfZ = new Pelicula();
 
-//        onePieceBattleOfZ.setNom("One Piece: Battle of Z");
-//        onePieceBattleOfZ.setProductora("Toei");
-//        onePieceBattleOfZ.setCategoria("Aventura");
-//        onePieceBattleOfZ.setDisponible(true);
-//        onePieceBattleOfZ.setSinopsis("Se dice que su poder es comparable al de las Armas Ancestrales, la \"carta de triunfo\" de la Marine,"
-//                + " \"La Piedra Dyna\", fue robada. El responsable es el temido y terriblemente poderoso, ex-Almirante de la Marine,"
-//                + " un hombre llamado \"Z\", quien se cruza en el camino de los Piratas del Sombrero de Paja.\n El Cuartel General de la "
-//                + "Marine se mueve hacia adelante para hacer frente a esta conspiración, que es capaz de hacer temblar los pilares"
-//                + " del Nuevo Mundo. Por otra parte el ex-almirante Aokiji, persigue a los Sombreros de Paja por el Nuevo Mundo,"
-//                + " mientras estos deciden enfrentar a Z y a su tripulación con su increíble poder.");
-//        onePieceBattleOfZ.setAny(2012);
+        onePieceBattleOfZ.setNom("One Piece: Battle of Z");
+        onePieceBattleOfZ.setProductora("Toei");
+        onePieceBattleOfZ.setCategoria("Aventura");
+        onePieceBattleOfZ.setDisponible(true);
+        onePieceBattleOfZ.setSinopsis("Se dice que su poder es comparable al de las Armas Ancestrales, la \"carta de triunfo\" de la Marine,"
+                + " \"La Piedra Dyna\", fue robada. El responsable es el temido y terriblemente poderoso, ex-Almirante de la Marine,"
+                + " un hombre llamado \"Z\", quien se cruza en el camino de los Piratas del Sombrero de Paja.\n El Cuartel General de la "
+                + "Marine se mueve hacia adelante para hacer frente a esta conspiración, que es capaz de hacer temblar los pilares"
+                + " del Nuevo Mundo. Por otra parte el ex-almirante Aokiji, persigue a los Sombreros de Paja por el Nuevo Mundo,"
+                + " mientras estos deciden enfrentar a Z y a su tripulación con su increíble poder.");
+        onePieceBattleOfZ.setAny(2012);
 
         /*
          *   ArrayList de Pelicula
          */
+        
         ArrayList<Pelicula> pelicules = new ArrayList<>();
-//        pelicules.add(dragonBallZBattleOfGods);
-//        pelicules.add(onePieceBattleOfZ);
+        pelicules.add(dragonBallZBattleOfGods);
+        pelicules.add(onePieceBattleOfZ);
+        
+        ArrayList<Pelicula> peliculas = new ArrayList<>();
+   
 
         /*
          *   Objectes de Serie
          */
+        
         Serie shingekiNoKyojin = new Serie();
         Serie boBoBo = new Serie();
 
@@ -273,9 +289,11 @@ public class Videoclub implements Serializable {
         /*
          *   ArrayList de Series
          */
+        
         ArrayList<Serie> series = new ArrayList<>();
-        series.add(shingekiNoKyojin);
         series.add(boBoBo);
+        series.add(shingekiNoKyojin);
+        ArrayList<Serie> serios = new ArrayList<>();
 
         /*
          *   D'Objectes i ArrayList de Temporades
@@ -286,121 +304,117 @@ public class Videoclub implements Serializable {
          *  Preguntarà a l'última temporada si està en emisió o no, si está ho desa tal cual,
          *  si està acabada ens deixa desar els capítols.
          */
-//        int i;
-//        for (i = 1; i <= boBoBo.getTotalTemporades(); i++) {
-//
-//            Temporada tempora = new Temporada();
-//            tempora.setNumeroTemporada(i);
-//            tempora.setNom("Temporada " + i);
-//            if (i == boBoBo.getTotalTemporades()) { // Aixó si es l'última
-//                System.out.println("\nLa " + tempora.getNom() + " de " + boBoBo.getNom() + " está en emisióbn? (true o false)\n");
-//                String string;
-//                Scanner e = new Scanner(System.in);
-//                string = e.nextLine();
-//                boolean si = Boolean.valueOf(string);
-//                tempora.setEmissio(si);
-//                if (si) { // Aixó si está en emissio
-//                    boBoBo.afegirTemporada(tempora);
-//                } else { // Aixó si está acabada
-//                    System.out.println("\nCapítulos de la " + tempora.getNom() + " de " + boBoBo.getNom() + ": \n");
-//                    string = e.nextLine();
-//                    int y = Integer.parseInt(string);
-//                    tempora.setTotalCapitols(y);
-//                    boBoBo.afegirTemporada(tempora);
-//                }//endif
-//            } else { // Aixó si está acabada
-//                tempora.setEmissio(false);
-//                System.out.println("\nCapítulos de la " + tempora.getNom() + " de " + boBoBo.getNom() + ": \n");
-//                String string;
-//                Scanner e = new Scanner(System.in);
-//                string = e.nextLine();
-//                int y = Integer.parseInt(string);
-//                tempora.setTotalCapitols(y);
-//                boBoBo.afegirTemporada(tempora);
-//            } //endif
-//        } //endfor
-//        
-//        /*
-//         *  Mateixa funció per a shingekiNoKyojin.
-//         */
-//
-//        for (i = 1; i <= shingekiNoKyojin.getTotalTemporades(); i++) {
-//            Temporada tempora = new Temporada();
-//            tempora.setNumeroTemporada(i);
-//            tempora.setNom("Temporada " + i);
-//            if (i == shingekiNoKyojin.getTotalTemporades()) { // Aixó si es l'última
-//                System.out.println("\nLa " + tempora.getNom() + " de " + shingekiNoKyojin.getNom() + " está en emisióbn? (true o false)\n");
-//                String string;
-//                Scanner e = new Scanner(System.in);
-//                string = e.nextLine();
-//                boolean si = Boolean.valueOf(string);
-//                tempora.setEmissio(si);
-//                if (si) { // Aixó si está en emissio
-//                    shingekiNoKyojin.afegirTemporada(tempora);
-//                } else { // Aixó si está acabada
-//                    System.out.println("\nCapítulos de la " + tempora.getNom() + " de " + shingekiNoKyojin.getNom() + ": \n");
-//                    string = e.nextLine();
-//                    int y = Integer.parseInt(string);
-//                    tempora.setTotalCapitols(y);
-//                    shingekiNoKyojin.afegirTemporada(tempora);
-//                }//endif
-//            } else { // Aixó si está acabada
-//                tempora.setEmissio(false);
-//                System.out.println("\nCapítulos de la " + tempora.getNom() + " de " + shingekiNoKyojin.getNom() + ": \n");
-//                String string;
-//                Scanner e = new Scanner(System.in);
-//                string = e.nextLine();
-//                int y = Integer.parseInt(string);
-//                tempora.setTotalCapitols(y);
-//                shingekiNoKyojin.afegirTemporada(tempora);
-//            } //endif
-//        } //endfor
+        
+        int i;
+        /*for (i = 1; i <= boBoBo.getTotalTemporades(); i++) {
+
+            Temporada tempora = new Temporada();
+            tempora.setNumeroTemporada(i);
+            tempora.setNom("Temporada " + i);
+            if (i == boBoBo.getTotalTemporades()) { // Aixó si es l'última
+                System.out.println("\nLa " + tempora.getNom() + " de " + boBoBo.getNom() + " está en emisióbn? (true o false)\n");
+                String string;
+                Scanner e = new Scanner(System.in);
+                string = e.nextLine();
+                boolean si = Boolean.valueOf(string);
+                tempora.setEmissio(si);
+                if (si) { // Aixó si está en emissio
+                    boBoBo.afegirTemporada(tempora);
+                } else { // Aixó si está acabada
+                    System.out.println("\nCapítulos de la " + tempora.getNom() + " de " + boBoBo.getNom() + ": \n");
+                    string = e.nextLine();
+                    int y = Integer.parseInt(string);
+                    tempora.setTotalCapitols(y);
+                    boBoBo.afegirTemporada(tempora);  // Afegim Temporada a la Serie
+                }//endif
+            } else { // Aixó si está acabada
+                tempora.setEmissio(false);
+                System.out.println("\nCapítulos de la " + tempora.getNom() + " de " + boBoBo.getNom() + ": \n");
+                String string;
+                Scanner e = new Scanner(System.in);
+                string = e.nextLine();
+                int y = Integer.parseInt(string);
+                tempora.setTotalCapitols(y);
+                boBoBo.afegirTemporada(tempora);  // Afegim Temporada a la Serie
+            } //endif  
+     
+        } //endfor
+        
+        /*
+         *  Mateixa funció per a shingekiNoKyojin.
+         */
+
+        /*for (i = 1; i <= shingekiNoKyojin.getTotalTemporades(); i++) {
+            Temporada tempora = new Temporada();
+            tempora.setNumeroTemporada(i);
+            tempora.setNom("Temporada " + i);
+            if (i == shingekiNoKyojin.getTotalTemporades()) { // Aixó si es l'última
+                System.out.println("\nLa " + tempora.getNom() + " de " + shingekiNoKyojin.getNom() + " está en emisióbn? (true o false)\n");
+                String string;
+                Scanner e = new Scanner(System.in);
+                string = e.nextLine();
+                boolean si = Boolean.valueOf(string);
+                tempora.setEmissio(si);
+                if (si) { // Aixó si está en emissio
+                    shingekiNoKyojin.afegirTemporada(tempora);
+                } else { // Aixó si está acabada
+                    System.out.println("\nCapítulos de la " + tempora.getNom() + " de " + shingekiNoKyojin.getNom() + ": \n");
+                    string = e.nextLine();
+                    int y = Integer.parseInt(string);
+                    tempora.setTotalCapitols(y);
+                    shingekiNoKyojin.afegirTemporada(tempora);  // Afegim Temporada a la Serie
+                }//endif
+            } else { // Aixó si está acabada
+                tempora.setEmissio(false);
+                System.out.println("\nCapítulos de la " + tempora.getNom() + " de " + shingekiNoKyojin.getNom() + ": \n");
+                String string;
+                Scanner e = new Scanner(System.in);
+                string = e.nextLine();
+                int y = Integer.parseInt(string);
+                tempora.setTotalCapitols(y);
+                shingekiNoKyojin.afegirTemporada(tempora);  // Afegim Temporada a la Serie
+            } //endif
+        } //endfor
+        
         /*
          *   Creació d'Objectes d'Usuari.
          */
+        
         Usuari admin = new Usuari();
-//         		         
-//         admin.setNom("admin");	
-//         admin.setCiutat("Internet");
-//         admin.setCodiPostal(6666);
-//         admin.setCognoms("strador");	
-//         admin.setDireccio("www.google.com");
-//         admin.setDni("127.0.0.1");
-//         admin.setNumTargeta(0000000000007);
-//         admin.setTelefon(687969314);
+         		         
+         admin.setNom("admin");	
+         admin.setCiutat("Internet");
+         admin.setCodiPostal(6666);
+         admin.setCognoms("strador");	
+         admin.setDireccio("www.google.com");
+         admin.setDni("127.0.0.1");
+         admin.setNumTargeta(0000000000007);
+         admin.setTelefon(687969314);
 
         /*
          *  Creació d'ArrayList d'Usuari.
          */
+         
         ArrayList<Usuari> usuaris = new ArrayList<>();
-//         usuaris.add(admin);
+        usuaris.add(admin);
+        ArrayList<Usuari> usuarios = new ArrayList<>();
 
         /*
          *  Merda de codi de prova
-         //         */
+         */
+         
 //         if (shingekiNoKyojin instanceof Serie){
 //             System.out.print(shingekiNoKyojin);	
 //         }//endif
+         
         /*
          *  Codi semi-definitiu.
          */
-        Videoclub app = new Videoclub();
         
-        app.carregarBD(pelicules, usuaris, series);
+        //desarBD(usuaris, pelicules, series);
+        carregarBD(usuarios, peliculas, serios);
+        System.out.println(shingekiNoKyojin.getSinopsis());
         
-        dragonBallZBattleOfGods = pelicules.get(0);
-        
-        System.out.println(dragonBallZBattleOfGods.getNom());
-        
-        onePieceBattleOfZ = pelicules.get(1);
-        
-        System.out.println(onePieceBattleOfZ.getNom());
-        
-        admin = usuaris.get(0);
-        
-        System.out.println(admin.getNom());
-        
-        //app.desarBD(usuaris, pelicules, series);
     } //endmain
 
 } //endclass
