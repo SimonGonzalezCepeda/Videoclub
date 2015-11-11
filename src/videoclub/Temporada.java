@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 package videoclub;
+import java.io.Serializable;
 
 /**
  *
  * @author sylver
  */
-public class Temporada extends Serie {
+public class Temporada extends Serie implements Serializable{
     
     private int numeroTemporada, totalCapitols;
     
