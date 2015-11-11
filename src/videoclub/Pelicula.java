@@ -12,6 +12,8 @@ import java.io.Serializable;
  */
 public class Pelicula extends Lloguer {
     
+    private int duracio;
+    
     /*
     *   Constructor
     */
@@ -20,4 +22,16 @@ public class Pelicula extends Lloguer {
         
     }
     
+    /*
+    *   Gettes & Setters
+    */
+
+    public int getDuracio() {
+        return duracio;
+    }
+
+    public void setDuracio(int duracio) {
+        this.duracio = duracio;
+    }
+        
 }
