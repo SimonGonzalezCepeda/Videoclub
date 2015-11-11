@@ -27,7 +27,7 @@ public class Videoclub implements Serializable {
     public static String rutaSer = "BD/series.bin";
     public Usuari usuari;
     public Lloguer lloguer;
-    
+
     /*
      *   Constructor
      */
@@ -62,20 +62,19 @@ public class Videoclub implements Serializable {
     public void loguejar() {
 
     }
-    
+
     /*
      *   Mètode amb el que es carrega tota l'informació en variables.
      *
      */
     static public void carregarBD(ArrayList<Usuari> usuaris, ArrayList<Pelicula> pelicules, ArrayList<Serie> series) throws IOException {
         ObjectInputStream master;
-        int i=0;
+        int i = 0;
 
         //Llegim fitxer per a Pelicula
-        
         master = new ObjectInputStream(new FileInputStream(rutaPel));
         Pelicula peli;
-        
+
         while (true) {
             try {
                 peli = (Pelicula) master.readObject();
@@ -92,10 +91,8 @@ public class Videoclub implements Serializable {
                 break;
             }
         }//endwhile
-                
-        
+
         //Llegim fitxer per a Serie
-       
         master = new ObjectInputStream(new FileInputStream(rutaSer));
         Serie serie;
         while (true) {
@@ -113,12 +110,8 @@ public class Videoclub implements Serializable {
                 break;
             }
         }//endwhile
-        
 
-        
-        
         //Llegim fitxer per a Usuari
-        
         master = new ObjectInputStream(new FileInputStream(rutaUsr));
         Usuari user;
         while (true) {
@@ -136,7 +129,7 @@ public class Videoclub implements Serializable {
                 break;
             }
         }//endwhile
-        
+
     }
 
 
@@ -144,9 +137,6 @@ public class Videoclub implements Serializable {
      *   Mètode amb el que es desa tota l'informació en variables.
      *
      */
-
-
-    
     /*
      *   Mètode amb el que es desa tota l'informació en variables.
      *
@@ -201,14 +191,11 @@ public class Videoclub implements Serializable {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         // TODO code application logic here
 
-        
-
         /*
          *   Objectes de Pel.licules
          */
-        
         Pelicula dragonBallZBattleOfGods = new Pelicula();
-        
+
         dragonBallZBattleOfGods.setNom("Dragon Ball Z: Battle of Gods");
         dragonBallZBattleOfGods.setSinopsis("Algunos años después de la batalla con Majin Buu, Bills, el dios de la destrucción,"
                 + " encargado de mantener el equilibrio del universo, se ha despertado de un largo sueño. Al escuchar rumores sobre"
@@ -234,9 +221,9 @@ public class Videoclub implements Serializable {
                 + " mientras estos deciden enfrentar a Z y a su tripulación con su increíble poder.");
         onePieceBattleOfZ.setAny(2012);
         onePieceBattleOfZ.setDuracio(107);
-        
+
         Pelicula thePlacePromisedinOurEarlyDays = new Pelicula();
-        
+
         thePlacePromisedinOurEarlyDays.setNom("The Place Promised in Our Early Days");
         thePlacePromisedinOurEarlyDays.setSinopsis(" En un lugar alternativo de la historia justo después de finalizada la segunda guerra mundial,"
                 + " Japón fue dividida y gobernada en una parte por la Unión Soviética y por otro lado los Estados unidos. Tres estudiantes de"
@@ -248,9 +235,9 @@ public class Videoclub implements Serializable {
         thePlacePromisedinOurEarlyDays.setDisponible(true);
         thePlacePromisedinOurEarlyDays.setAny(2004);
         thePlacePromisedinOurEarlyDays.setDuracio(90);
-        
+
         Pelicula narutoTheLast = new Pelicula();
-        
+
         narutoTheLast.setNom("The Last: Naruto the Movie");
         narutoTheLast.setSinopsis("¡La luna está cerca de colisionar! ¡A este paso, con la luna a punto de colisionar, caerá a la Tierra "
                 + "convirtiéndose en un meteorito! ¡La cuenta atrás del Día del Juicio Final comienza! ¡¿Cómo se enfrentará Naruto a esta "
@@ -260,9 +247,9 @@ public class Videoclub implements Serializable {
         narutoTheLast.setDisponible(true);
         narutoTheLast.setAny(2014);
         narutoTheLast.setDuracio(112);
-        
+
         Pelicula elViajeDeChihiro = new Pelicula();
-        
+
         elViajeDeChihiro.setNom("El viaje de Chichiro");
         elViajeDeChihiro.setSinopsis("Chihiro es una niña de diez años que viaja en coche con sus padres. Después de atravesar un túnel, "
                 + "llegan a un mundo fantástico, en el que no hay lugar para los seres humanos, sólo para los dioses de primera y segunda "
@@ -272,9 +259,9 @@ public class Videoclub implements Serializable {
         elViajeDeChihiro.setDisponible(true);
         elViajeDeChihiro.setAny(2002);
         elViajeDeChihiro.setDuracio(125);
-        
+
         Pelicula miVecinoTotoro = new Pelicula();
-        
+
         miVecinoTotoro.setNom("Mi Vecino Totoro");
         miVecinoTotoro.setSinopsis("En los años 50, una familia japonesa se traslada al campo. Las dos hijas, Satsuki y Mei, entablan "
                 + "amistad con Totoro, un espíritu del bosque. El padre es un profesor universitario que estimula la imaginación de sus"
@@ -285,9 +272,9 @@ public class Videoclub implements Serializable {
         miVecinoTotoro.setDisponible(true);
         miVecinoTotoro.setAny(1988);
         miVecinoTotoro.setDuracio(86);
-        
+
         Pelicula laTumbaDeLasLuciernagas = new Pelicula();
-        
+
         laTumbaDeLasLuciernagas.setNom("La tumba de las luciernagas");
         laTumbaDeLasLuciernagas.setSinopsis("Segunda Guerra Mundial (1939-1945). Seita y Setsuko son hijos de un oficial de la marina "
                 + "japonesa que viven en Kobe. Un día, durante un bombardeo, no consiguen llegar a tiempo al búnker donde su madre los "
@@ -298,9 +285,9 @@ public class Videoclub implements Serializable {
         laTumbaDeLasLuciernagas.setDisponible(true);
         laTumbaDeLasLuciernagas.setAny(2003);
         laTumbaDeLasLuciernagas.setDuracio(90);
-        
+
         Pelicula bleachMemoriesOfNobody = new Pelicula();
-        
+
         bleachMemoriesOfNobody.setNom("Bleach: Memories of nobody");
         bleachMemoriesOfNobody.setSinopsis("Después de regresar de la Sociedad de Almas y estando en el mundo humano, específicamente "
                 + "en la ciudad Karakura, Ichigo Kurosaki y Rukia Kuchiki son atacados por una gran cantidad de almas desconocidas. "
@@ -312,9 +299,9 @@ public class Videoclub implements Serializable {
         bleachMemoriesOfNobody.setDisponible(true);
         bleachMemoriesOfNobody.setAny(2006);
         bleachMemoriesOfNobody.setDuracio(90);
-        
+
         Pelicula fairyTailLaSacerdotisaDelFenix = new Pelicula();
-        
+
         fairyTailLaSacerdotisaDelFenix.setNom("Fairy Tail: La sacerdotisa del fénix");
         fairyTailLaSacerdotisaDelFenix.setSinopsis(" En Fairy Tail: Hoo no Miko, Lucy conocerá a una joven amnésica llamada Eclair, "
                 + "cuyo único recuerdo es que debe entregar la Piedra del Fénix en algún lugar. Así, Lucy se propondrá ayudar a la chica "
@@ -324,9 +311,9 @@ public class Videoclub implements Serializable {
         fairyTailLaSacerdotisaDelFenix.setDisponible(true);
         fairyTailLaSacerdotisaDelFenix.setAny(2012);
         fairyTailLaSacerdotisaDelFenix.setDuracio(86);
-        
+
         Pelicula pokemonArceusYLaJoyaDeLaVida = new Pelicula();
-        
+
         pokemonArceusYLaJoyaDeLaVida.setNom("Pokémon: Arceus y la joya de la vida");
         pokemonArceusYLaJoyaDeLaVida.setSinopsis("Los protagonistas conocen a unos muchachos que resultan ser los cuidadores de unas ruinas"
                 + " y les darán información importante. Deben viajar al pasado para hablar con el poseedor de la joya de la vida. ");
@@ -335,9 +322,9 @@ public class Videoclub implements Serializable {
         pokemonArceusYLaJoyaDeLaVida.setDisponible(true);
         pokemonArceusYLaJoyaDeLaVida.setAny(2009);
         pokemonArceusYLaJoyaDeLaVida.setDuracio(93);
-        
+
         Pelicula karukenbo = new Pelicula();
-        
+
         karukenbo.setNom("Karukenbo");
         karukenbo.setSinopsis("Según la leyenda urbana, en una ciudad abandonada se juega el Otokoyo una versión del Kakurenbo, donde "
                 + "los niños que deseen participar deben ponerse máscaras de zorros y seguir las pistas que los llevarán al punto de"
@@ -349,9 +336,9 @@ public class Videoclub implements Serializable {
         karukenbo.setDisponible(true);
         karukenbo.setAny(2005);
         karukenbo.setDuracio(25);
-        
+
         Pelicula perfectBlue = new Pelicula();
-        
+
         perfectBlue.setNom("Perfect blue");
         perfectBlue.setSinopsis("Mima es la cantante de un famoso grupo musical japonés. Debido al fracaso de ventas de sus discos, su "
                 + "mánager decide apartarla del grupo y darle un papel en una serie de televisión. Mima cae entonces en una profunda"
@@ -365,9 +352,9 @@ public class Videoclub implements Serializable {
         perfectBlue.setDisponible(true);
         perfectBlue.setAny(1998);
         perfectBlue.setDuracio(81);
-        
+
         Pelicula astroBoy = new Pelicula();
-        
+
         astroBoy.setNom("Astro Boy");
         astroBoy.setSinopsis("\"Astro Boy\" es la adaptación cinematográfica de un cómic del prestigioso Osamu Tezuka, que dio origen a "
                 + "una popular serie de televisión japonesa de los 60. Su protagonista es un joven robot con increíbles poderes que ha"
@@ -379,9 +366,9 @@ public class Videoclub implements Serializable {
         astroBoy.setDisponible(true);
         astroBoy.setAny(2009);
         astroBoy.setDuracio(83);
-        
+
         Pelicula fullmetalAlchemistConquistadorDeShambala = new Pelicula();
-        
+
         fullmetalAlchemistConquistadorDeShambala.setNom("Fullmetal Alchemist: Conquistador de Shambala");
         fullmetalAlchemistConquistadorDeShambala.setSinopsis("Es el año 1923, en Munich. Han pasado dos años desde el episodio final de "
                 + "la serie \"Fullmetal Alchemist\", dos años desde que Edward se sacrificara para poder resucitar a su hermano Alphonse "
@@ -394,9 +381,9 @@ public class Videoclub implements Serializable {
         fullmetalAlchemistConquistadorDeShambala.setDisponible(true);
         fullmetalAlchemistConquistadorDeShambala.setAny(2005);
         fullmetalAlchemistConquistadorDeShambala.setDuracio(104);
-        
+
         Pelicula cincocCentimetrosPorSegundo = new Pelicula();
-        
+
         cincocCentimetrosPorSegundo.setNom("Cinco centimetros por segundo");
         cincocCentimetrosPorSegundo.setSinopsis("¿Cuándo empecé a escribir mensajes que nunca envío? ¿A qué velocidad debo vivir para "
                 + "volverte a ver? Después de graduarse en escuela primaria, Takaki Tono y Akari Shinohara fueron por caminos separados a "
@@ -408,9 +395,9 @@ public class Videoclub implements Serializable {
         cincocCentimetrosPorSegundo.setDisponible(true);
         cincocCentimetrosPorSegundo.setAny(2007);
         cincocCentimetrosPorSegundo.setDuracio(63);
-        
+
         Pelicula haruEnElReinoDeLosGatos = new Pelicula();
-        
+
         haruEnElReinoDeLosGatos.setNom("Haru en el reino de los gatos");
         haruEnElReinoDeLosGatos.setSinopsis("Esta es la historia de Haru, una joven cuya suerte cambiará cuando un día, al volver del "
                 + "instituto, salva a un gato de ser atropellado por un camión. Pero no es un gato común, es Lune, el Príncipe del Reino "
@@ -420,9 +407,9 @@ public class Videoclub implements Serializable {
         haruEnElReinoDeLosGatos.setDisponible(true);
         haruEnElReinoDeLosGatos.setAny(2002);
         haruEnElReinoDeLosGatos.setDuracio(72);
-        
+
         Pelicula bayonettaBloodyFate = new Pelicula();
-        
+
         bayonettaBloodyFate.setNom("Bayonetta: bloody fate");
         bayonettaBloodyFate.setSinopsis("Hace mucho tiempo en una ciudad llamada Vigrid, los sabios (seres de la luz) y las brujas "
                 + "(seres de la oscuridad) vivían en armonía. El mundo de los hombres, el infierno y el paraíso estaban en orden, hasta"
@@ -434,9 +421,9 @@ public class Videoclub implements Serializable {
         bayonettaBloodyFate.setDisponible(true);
         bayonettaBloodyFate.setAny(2013);
         bayonettaBloodyFate.setDuracio(91);
-        
+
         Pelicula bloodElUltimoVampiro = new Pelicula();
-        
+
         bloodElUltimoVampiro.setNom("Blood: el último vampiro");
         bloodElUltimoVampiro.setSinopsis("Una nueva raza de vampiros ha surgido de la oscuridad. Están entre nosotros, acechando, sedientos "
                 + "de sangre en busca de nuevas víctimas. Una guerra silenciosa entre vampiros y humanos ha estallado. Una organización"
@@ -449,9 +436,9 @@ public class Videoclub implements Serializable {
         bloodElUltimoVampiro.setDisponible(true);
         bloodElUltimoVampiro.setAny(2001);
         bloodElUltimoVampiro.setDuracio(48);
-        
+
         Pelicula losNiñosLobo = new Pelicula();
-        
+
         losNiñosLobo.setNom("Los niños lobo");
         losNiñosLobo.setSinopsis("Cuando era poco más que una adolescente, Hana se enamoró de un Hombre Lobo. Puede parecer extraño, pero"
                 + " durante años fueron inmensamente felices, y tuvieron dos hijos: Yuki y Ame, que nacieron también con la capacidad de "
@@ -464,9 +451,9 @@ public class Videoclub implements Serializable {
         losNiñosLobo.setDisponible(true);
         losNiñosLobo.setAny(2012);
         losNiñosLobo.setDuracio(117);
-        
+
         Pelicula elJardínDeLasPalabras = new Pelicula();
-        
+
         elJardínDeLasPalabras.setNom("El jardín de las palabras");
         elJardínDeLasPalabras.setSinopsis("Takao Akizuki es un estudiante de 15 años que desea convertirse en diseñador de zapatos. Le gustan"
                 + " los días lluviosos, por lo que cuando llueve prefiere caminar que tomar el tren a la escuela. En una de sus caminatas "
@@ -485,9 +472,8 @@ public class Videoclub implements Serializable {
         /*
          *   ArrayList de Pelicula
          */
-        
         ArrayList<Pelicula> pelicules = new ArrayList<>();
-        
+
         pelicules.add(dragonBallZBattleOfGods);
         pelicules.add(onePieceBattleOfZ);
         pelicules.add(thePlacePromisedinOurEarlyDays);
@@ -508,14 +494,13 @@ public class Videoclub implements Serializable {
         pelicules.add(bloodElUltimoVampiro);
         pelicules.add(losNiñosLobo);
         pelicules.add(elJardínDeLasPalabras);
-        
+
         ArrayList<Pelicula> peliculas = new ArrayList<>();
-   
+
 
         /*
          *   Objectes de Serie
          */
-        
         Serie shingekiNoKyojin = new Serie();
         Serie boBoBo = new Serie();
         Serie onePiece = new Serie();
@@ -528,10 +513,7 @@ public class Videoclub implements Serializable {
         Serie logHorizon = new Serie();
         Serie elfenLied = new Serie();
         Serie loveHina = new Serie();
-        Serie detectiveConan  = new Serie();
-
-        
-        
+        Serie detectiveConan = new Serie();
 
         shingekiNoKyojin.setNom("Shingeki no Kyojin");
         shingekiNoKyojin.setCategoria("Acción");
@@ -567,7 +549,7 @@ public class Videoclub implements Serializable {
                 + " de la gente pueda ser libre.");
         boBoBo.setEmissio(false);
         boBoBo.setTotalTemporades(2);
-        
+
         onePiece.setNom("One Piece");
         onePiece.setSinopsis("Una historia épica de piratas, donde narra la historia de \"Monkey D. Luffy\" quien cuando tenia 7 años, "
                 + "comió accidentalmente una \"Akuma no mi\"(Fruta del diablo) la cual le convirtió en un hombre de goma. Por otra parte"
@@ -583,7 +565,7 @@ public class Videoclub implements Serializable {
         onePiece.setEmissio(true);
         onePiece.setTotalTemporades(11);
         onePiece.setDisponible(true);
-        
+
         fairyTail.setNom("Fairy Tail");
         fairyTail.setSinopsis("Fairy Tail cuenta la historia de un joven mago llamado Natsu en la búsqueda de su maestro y padre adoptivo"
                 + "Igneel que resulta ser un dragón. Por ello se unió a Fairy Tail, un gremio de magos que es famoso por los destrozos y"
@@ -599,7 +581,7 @@ public class Videoclub implements Serializable {
         fairyTail.setEmissio(true);
         fairyTail.setTotalTemporades(2);
         fairyTail.setDisponible(true);
-        
+
         dragonBall.setNom("Dragon Ball");
         dragonBall.setSinopsis("La serie trata de un niño llamado Son Goku, el cuál un día se encuentra a una chica llamada Bulma. Ésta le "
                 + "cuenta la existencia de unas bolas de dragón que pueden conceder cualquier deseo a quien reúna las 7. Goku y Bulma vivirán"
@@ -610,7 +592,7 @@ public class Videoclub implements Serializable {
         dragonBall.setEmissio(false);
         dragonBall.setTotalTemporades(7);
         dragonBall.setDisponible(true);
-        
+
         dragonBallZ.setNom("Dragon Ball Z");
         dragonBallZ.setSinopsis("Dragon Ball Z es la continuación de la vida adulta que lleva Goku, paralelamente narra la madurez de su hijo,"
                 + " Gohan. Entre Goku y todos sus amigos intentarán proteger la Tierra de las diferentes amenazas que irán surgiendo. ");
@@ -620,7 +602,7 @@ public class Videoclub implements Serializable {
         dragonBallZ.setEmissio(false);
         dragonBallZ.setTotalTemporades(8);
         dragonBallZ.setDisponible(true);
-        
+
         deathNote.setNom("Death Note");
         deathNote.setSinopsis("Death Note cuenta la historia sobre un joven llamado Yagami Light. Un aburrido día de clase ve caer un cuaderno "
                 + "negro en el patio de su escuela, titulado Death Note. Según las instrucciones escritas en el mismo cuaderno, aquella persona "
@@ -632,7 +614,7 @@ public class Videoclub implements Serializable {
         deathNote.setEmissio(false);
         deathNote.setTotalTemporades(2);
         deathNote.setDisponible(true);
-        
+
         noGameNoLife.setNom("No game no life");
         noGameNoLife.setSinopsis("No Game, No Life se centra en Sora y Shiro, unos hermanos cuya reputación de NEETs hikikomoris y gamers han hecho"
                 + " que comiencen a extenderse leyendas urbanas suyas por todo internet.\n Estos dos gamers consideran que el mundo real no es más que"
@@ -645,7 +627,7 @@ public class Videoclub implements Serializable {
         noGameNoLife.setEmissio(false);
         noGameNoLife.setTotalTemporades(1);
         noGameNoLife.setDisponible(true);
-        
+
         swordArtOnline.setNom("Sword Art Online");
         swordArtOnline.setSinopsis("Escapar es imposible hasta terminar el juego; un game over significaría una verdadera \"muerte\". Sin saber la "
                 + "\"verdad\" de la siguiente generación del Multijugador Masivo Online, 'Sword Art Online(SAO)', con 10 mil usuarios unidos juntos "
@@ -660,7 +642,7 @@ public class Videoclub implements Serializable {
         swordArtOnline.setEmissio(false);
         swordArtOnline.setTotalTemporades(4);
         swordArtOnline.setDisponible(true);
-        
+
         logHorizon.setNom("Log Horizon");
         logHorizon.setSinopsis("Elder Tale es un juego online de relidad virtual de mucho éxito entre los jugadores Japoneses, pero el día en que"
                 + " se lanzó el décimo segundo pack de expansión, 30.000 usuarios se vieron encerrados en el mundo fantástico de Elder Tale. El "
@@ -672,7 +654,7 @@ public class Videoclub implements Serializable {
         logHorizon.setEmissio(false);
         logHorizon.setTotalTemporades(2);
         logHorizon.setDisponible(true);
-        
+
         elfenLied.setNom("Elfen Lied");
         elfenLied.setSinopsis("Los diclonius (humanos con dos pequeños cuernos) son unos mutantes creados por el hombre con un don que se le podría"
                 + " denominar como un sexto sentido. Estos seres tienen el poder necesario como para eliminar toda la humanidad. La humanidad está "
@@ -685,7 +667,7 @@ public class Videoclub implements Serializable {
         elfenLied.setEmissio(false);
         elfenLied.setTotalTemporades(1);
         elfenLied.setDisponible(true);
-        
+
         loveHina.setNom("Love Hina");
         loveHina.setSinopsis("Love Hina cuenta la historia de un joven llamado Keitaro Urashima que a los 5 años le prometió a una chica que irían "
                 + "juntos a la todai (universidad de Tokyo), donde vivirían juntos. 15 años después, sin recordar el nombre o la cara de la niña y "
@@ -698,7 +680,7 @@ public class Videoclub implements Serializable {
         loveHina.setEmissio(false);
         loveHina.setTotalTemporades(2);
         loveHina.setDisponible(true);
-        
+
         detectiveConan.setNom("Detective Conan");
         detectiveConan.setSinopsis("Shinichi Kudo es un joven detective que consigue esclarecer cualquier misterio, por difícil que sea. Un día,"
                 + " nuestro protagonista descubre los maléficos planes de una peligrosa organización criminal y es envenenado. Sin embargo, el veneno no"
@@ -716,7 +698,6 @@ public class Videoclub implements Serializable {
          *   ArrayList de Series per a desar informació de Temporades.
          *  L'array definitiu estarà baix del for.
          */
-        
         ArrayList<Serie> series = new ArrayList<>();
         series.add(boBoBo);
         series.add(shingekiNoKyojin);
@@ -731,9 +712,6 @@ public class Videoclub implements Serializable {
         series.add(elfenLied);
         series.add(loveHina);
         series.add(detectiveConan);
-        
-        
-        ArrayList<Serie> serios = new ArrayList<>();
 
         /*
          *   D'Objectes i ArrayList de Temporades
@@ -744,97 +722,83 @@ public class Videoclub implements Serializable {
          *  Preguntarà a l'última temporada si està en emisió o no, si está ho desa tal cual,
          *  si està acabada ens deixa desar els capítols.
          */
-        
-        int i;
-        for (i = 1; i <= boBoBo.getTotalTemporades(); i++) {
+        int i, j;
 
-            Temporada tempora = new Temporada();
-            tempora.setNumeroTemporada(i);
-            tempora.setNom("Temporada " + i);
-            if (i == boBoBo.getTotalTemporades()) { // Aixó si es l'última
-                System.out.println("\nLa " + tempora.getNom() + " de " + boBoBo.getNom() + " está en emisióbn? (true o false)\n");
-                String string;
-                Scanner e = new Scanner(System.in);
-                string = e.nextLine();
-                boolean si = Boolean.valueOf(string);
-                tempora.setEmissio(si);
-                if (si) { // Aixó si está en emissio
-                    boBoBo.afegirTemporada(tempora);
+        for (j = 0; j < series.size(); j++) {
+            
+            Serie serie = series.get(j);
+            
+            
+            for (i = 1; i <= serie.getTotalTemporades(); i++) {
+
+                Temporada tempora = new Temporada();
+                tempora.setNumeroTemporada(i);
+                tempora.setNom("Temporada " + i);
+                if (i == serie.getTotalTemporades()) { // Aixó si es l'última
+                    System.out.println("\nLa " + tempora.getNom() + " de " + serie.getNom() + " está en emisióbn? (true o false)\n");
+                    String string;
+                    Scanner e = new Scanner(System.in);
+                    string = e.nextLine();
+                    boolean si = Boolean.valueOf(string);
+                    tempora.setEmissio(si);
+                    if (si) { // Aixó si está en emissio
+                        serie.afegirTemporada(tempora);
+                    } else { // Aixó si está acabada
+                        System.out.println("\nCapítulos de la " + tempora.getNom() + " de " + serie.getNom() + ": \n");
+                        string = e.nextLine();
+                        int y = Integer.parseInt(string);
+                        tempora.setTotalCapitols(y);
+                        serie.afegirTemporada(tempora);  // Afegim Temporada a la Serie
+                    }//endif
                 } else { // Aixó si está acabada
-                    System.out.println("\nCapítulos de la " + tempora.getNom() + " de " + boBoBo.getNom() + ": \n");
+                    tempora.setEmissio(false);
+                    System.out.println("\nCapítulos de la " + tempora.getNom() + " de " + serie.getNom() + ": \n");
+                    String string;
+                    Scanner e = new Scanner(System.in);
                     string = e.nextLine();
                     int y = Integer.parseInt(string);
                     tempora.setTotalCapitols(y);
-                    boBoBo.afegirTemporada(tempora);  // Afegim Temporada a la Serie
-                }//endif
-            } else { // Aixó si está acabada
-                tempora.setEmissio(false);
-                System.out.println("\nCapítulos de la " + tempora.getNom() + " de " + boBoBo.getNom() + ": \n");
-                String string;
-                Scanner e = new Scanner(System.in);
-                string = e.nextLine();
-                int y = Integer.parseInt(string);
-                tempora.setTotalCapitols(y);
-                boBoBo.afegirTemporada(tempora);  // Afegim Temporada a la Serie
-            } //endif  
-     
-        } //endfor
+                    serie.afegirTemporada(tempora);  // Afegim Temporada a la Serie
+                } //endif  
+
+            } //end2nfor
+        } //end1rfor
         
         /*
-         *  Mateixa funció per a shingekiNoKyojin.
-         */
+         *  ArrayList definitiva de Serie
+        */
+        ArrayList<Serie> seriesly = new ArrayList<>();
+        seriesly.add(boBoBo);
+        seriesly.add(shingekiNoKyojin);
+        seriesly.add(onePiece);
+        seriesly.add(fairyTail);
+        seriesly.add(dragonBall);
+        seriesly.add(dragonBallZ);
+        seriesly.add(deathNote);
+        seriesly.add(noGameNoLife);
+        seriesly.add(swordArtOnline);
+        seriesly.add(logHorizon);
+        seriesly.add(elfenLied);
+        seriesly.add(loveHina);
+        seriesly.add(detectiveConan);
 
-        for (i = 1; i <= shingekiNoKyojin.getTotalTemporades(); i++) {
-            Temporada tempora = new Temporada();
-            tempora.setNumeroTemporada(i);
-            tempora.setNom("Temporada " + i);
-            if (i == shingekiNoKyojin.getTotalTemporades()) { // Aixó si es l'última
-                System.out.println("\nLa " + tempora.getNom() + " de " + shingekiNoKyojin.getNom() + " está en emisióbn? (true o false)\n");
-                String string;
-                Scanner e = new Scanner(System.in);
-                string = e.nextLine();
-                boolean si = Boolean.valueOf(string);
-                tempora.setEmissio(si);
-                if (si) { // Aixó si está en emissio
-                    shingekiNoKyojin.afegirTemporada(tempora);
-                } else { // Aixó si está acabada
-                    System.out.println("\nCapítulos de la " + tempora.getNom() + " de " + shingekiNoKyojin.getNom() + ": \n");
-                    string = e.nextLine();
-                    int y = Integer.parseInt(string);
-                    tempora.setTotalCapitols(y);
-                    shingekiNoKyojin.afegirTemporada(tempora);  // Afegim Temporada a la Serie
-                }//endif
-            } else { // Aixó si está acabada
-                tempora.setEmissio(false);
-                System.out.println("\nCapítulos de la " + tempora.getNom() + " de " + shingekiNoKyojin.getNom() + ": \n");
-                String string;
-                Scanner e = new Scanner(System.in);
-                string = e.nextLine();
-                int y = Integer.parseInt(string);
-                tempora.setTotalCapitols(y);
-                shingekiNoKyojin.afegirTemporada(tempora);  // Afegim Temporada a la Serie
-            } //endif
-        } //endfor
-        
         /*
          *   Creació d'Objectes d'Usuari.
          */
-        
         Usuari admin = new Usuari();
-         		         
-         admin.setNom("admin");	
-         admin.setCiutat("Internet");
-         admin.setCodiPostal(6666);
-         admin.setCognoms("strador");	
-         admin.setDireccio("www.google.com");
-         admin.setDni("127.0.0.1");
-         admin.setNumTargeta(0000000000007);
-         admin.setTelefon(687969314);
+
+        admin.setNom("admin");
+        admin.setCiutat("Internet");
+        admin.setCodiPostal(6666);
+        admin.setCognoms("strador");
+        admin.setDireccio("www.google.com");
+        admin.setDni("127.0.0.1");
+        admin.setNumTargeta(0000000000007);
+        admin.setTelefon(687969314);
 
         /*
          *  Creació d'ArrayList d'Usuari.
          */
-         
         ArrayList<Usuari> usuaris = new ArrayList<>();
         usuaris.add(admin);
         ArrayList<Usuari> usuarios = new ArrayList<>();
@@ -842,25 +806,21 @@ public class Videoclub implements Serializable {
         /*
          *  Merda de codi de prova
          */
-         
 //         if (shingekiNoKyojin instanceof Serie){
 //             System.out.print(shingekiNoKyojin);	
 //         }//endif
-         
         /*
          *  Codi semi-definitiu.
          */
-        
-        ArrayList<Temporada> temp = boBoBo.getTemporadas();
-        Temporada tempo = temp.get(0);
-        
-        System.out.println(tempo.getNumeroTemporada());
-        System.out.println(tempo.getNom());
-        System.out.println(tempo.getTotalCapitols());
+//        ArrayList<Temporada> temp = boBoBo.getTemporadas();
+//        Temporada tempo = temp.get(0);
+//        
+//        System.out.println(tempo.getNumeroTemporada());
+//        System.out.println(tempo.getNom());
+//        System.out.println(tempo.getTotalCapitols());
         //desarBD(usuaris, pelicules, series);
         //carregarBD(usuarios, peliculas, serios);
         //System.out.println(shingekiNoKyojin.getSinopsis());
-        
     } //endmain
 
 } //endclass
