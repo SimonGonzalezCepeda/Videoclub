@@ -812,12 +812,13 @@ public class Videoclub implements Serializable {
         /*
          *  Codi semi-definitiu.
          */
-//        ArrayList<Temporada> temp = boBoBo.getTemporadas();
-//        Temporada tempo = temp.get(0);
-//        
-//        System.out.println(tempo.getNumeroTemporada());
-//        System.out.println(tempo.getNom());
-//        System.out.println(tempo.getTotalCapitols());
+        
+        ArrayList<Temporada> temp = boBoBo.getTemporadas();
+        Temporada tempo = temp.get(0);
+        
+        System.out.println(tempo.getNumeroTemporada());
+        System.out.println(tempo.getNom());
+        System.out.println(tempo.getTotalCapitols());
         //desarBD(usuaris, pelicules, series);
         //carregarBD(usuarios, peliculas, serios);
         //System.out.println(shingekiNoKyojin.getSinopsis());
