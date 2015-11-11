@@ -30,10 +30,10 @@ public class Serie extends Lloguer {
     
     public void afegirTemporada(Temporada t){
         //hem d'afegir les temporades.
-        temporadas.add(t);
-                   
+        temporadas.add(t);       
+        
     }
-    
+      
     /*
     *   Getters & Setters
     */
