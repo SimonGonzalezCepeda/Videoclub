@@ -79,7 +79,6 @@ public class Videoclub implements Serializable {
             try {
                 peli = (Pelicula) master.readObject();
                 pelicules.add(peli);
-                System.out.println("chivato");
             } catch (FileNotFoundException e) {
                 System.out.println("\nEl fichero no existe o esta vacio!\n");
                 break;
@@ -125,7 +124,7 @@ public class Videoclub implements Serializable {
                 System.out.println("\nNo se ha encontrdo la clase readObject!\n");
                 break;
             } catch (EOFException e) {
-                //System.out.println("\nSe ha leído el fichero usuaris.txt\n");
+                System.out.println("\nSe ha leído el fichero usuaris.txt\n");
                 break;
             }
         }//endwhile
@@ -712,6 +711,8 @@ public class Videoclub implements Serializable {
         series.add(elfenLied);
         series.add(loveHina);
         series.add(detectiveConan);
+        
+        ArrayList<Serie> serios = new ArrayList<>();
 
         /*
          *   D'Objectes i ArrayList de Temporades
@@ -735,7 +736,7 @@ public class Videoclub implements Serializable {
                 tempora.setNumeroTemporada(i);
                 tempora.setNom("Temporada " + i);
                 if (i == serie.getTotalTemporades()) { // Aixó si es l'última
-                    System.out.println("\nLa " + tempora.getNom() + " de " + serie.getNom() + " está en emisióbn? (true o false)\n");
+                    System.out.println("\nLa " + tempora.getNom() + " de " + serie.getNom() + " está en emisión? (true o false)\n");
                     String string;
                     Scanner e = new Scanner(System.in);
                     string = e.nextLine();
@@ -763,24 +764,6 @@ public class Videoclub implements Serializable {
 
             } //end2nfor
         } //end1rfor
-        
-        /*
-         *  ArrayList definitiva de Serie
-        */
-        ArrayList<Serie> seriesly = new ArrayList<>();
-        seriesly.add(boBoBo);
-        seriesly.add(shingekiNoKyojin);
-        seriesly.add(onePiece);
-        seriesly.add(fairyTail);
-        seriesly.add(dragonBall);
-        seriesly.add(dragonBallZ);
-        seriesly.add(deathNote);
-        seriesly.add(noGameNoLife);
-        seriesly.add(swordArtOnline);
-        seriesly.add(logHorizon);
-        seriesly.add(elfenLied);
-        seriesly.add(loveHina);
-        seriesly.add(detectiveConan);
 
         /*
          *   Creació d'Objectes d'Usuari.
@@ -812,16 +795,15 @@ public class Videoclub implements Serializable {
         /*
          *  Codi semi-definitiu.
          */
-        
         ArrayList<Temporada> temp = boBoBo.getTemporadas();
         Temporada tempo = temp.get(0);
         
         System.out.println(tempo.getNumeroTemporada());
         System.out.println(tempo.getNom());
         System.out.println(tempo.getTotalCapitols());
-        //desarBD(usuaris, pelicules, series);
-        //carregarBD(usuarios, peliculas, serios);
-        //System.out.println(shingekiNoKyojin.getSinopsis());
+        desarBD(usuaris, pelicules, series);
+        carregarBD(usuarios, peliculas, serios);
+        System.out.println(shingekiNoKyojin.getSinopsis());
     } //endmain
 
 } //endclass
