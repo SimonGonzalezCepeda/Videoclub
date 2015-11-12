@@ -168,7 +168,7 @@ public class Videoclub implements Serializable {
 
         // Creem fitxer per a Series
         master = new ObjectOutputStream(new FileOutputStream(rutaSer));
-        for (i = 0; i < series.size() - 1; i++) {
+        for (i = 0; i <= series.size() - 1; i++) {
             try {
                 master.writeObject(series.get(i));
             } catch (IOException e) {
@@ -737,13 +737,13 @@ public class Videoclub implements Serializable {
                 tempora.setNom("Temporada " + i);
                 if (i == serie.getTotalTemporades()) { // Aixó si es l'última
                     System.out.println("\nLa " + tempora.getNom() + " de " + serie.getNom() + " está en emisión? (true o false)\n");
-                    String string;
-                    Scanner e = new Scanner(System.in);
-                    string = e.nextLine();
-                    boolean si = Boolean.valueOf(string);
-                    tempora.setEmissio(si);
+                    String string;                          // Creem una String per a desar si sí (true) o si no (false)
+                    Scanner e = new Scanner(System.in);     // Amb això llegim la inserció del teclat
+                    string = e.nextLine();                  // Ho dessem.
+                    boolean si = Boolean.valueOf(string);   // Creem una boolea que desa la paraula que hem escrit com a valor boolean.
+                    tempora.setEmissio(si);                 // Dessem l'estat de l'última temporada.
                     if (si) { // Aixó si está en emissio
-                        serie.afegirTemporada(tempora);
+                        serie.afegirTemporada(tempora);     // Adegim Temporada a la Serie
                     } else { // Aixó si está acabada
                         System.out.println("\nCapítulos de la " + tempora.getNom() + " de " + serie.getNom() + ": \n");
                         string = e.nextLine();
@@ -787,23 +787,12 @@ public class Videoclub implements Serializable {
         ArrayList<Usuari> usuarios = new ArrayList<>();
 
         /*
-         *  Merda de codi de prova
-         */
-//         if (shingekiNoKyojin instanceof Serie){
-//             System.out.print(shingekiNoKyojin);	
-//         }//endif
-        /*
          *  Codi semi-definitiu.
          */
-        ArrayList<Temporada> temp = boBoBo.getTemporadas();
-        Temporada tempo = temp.get(0);
-        
-        System.out.println(tempo.getNumeroTemporada());
-        System.out.println(tempo.getNom());
-        System.out.println(tempo.getTotalCapitols());
+
         desarBD(usuaris, pelicules, series);
-        carregarBD(usuarios, peliculas, serios);
-        System.out.println(shingekiNoKyojin.getSinopsis());
+        //carregarBD(usuarios, peliculas, serios);
+
     } //endmain
 
 } //endclass
