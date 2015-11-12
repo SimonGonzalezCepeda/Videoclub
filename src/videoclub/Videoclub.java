@@ -23,8 +23,8 @@ import java.io.*;
 public class Videoclub implements Serializable {
 
     private static final String rutaUsr = "BD/usuaris.bin";
-    public static final String rutaPel = "BD/pelicules.bin";
-    public static final String rutaSer = "BD/series.bin";
+    private static final String rutaPel = "BD/pelicules.bin";
+    private static final String rutaSer = "BD/series.bin";
     public Usuari usuari;
     public Lloguer lloguer;
     public static ArrayList<Usuari> usuarios = new ArrayList<>();
@@ -44,13 +44,13 @@ public class Videoclub implements Serializable {
      */
     
     /*
-     *   Métode per a cercar els continguts en ordre alfabètic.
+     *   Métode per a cercar les pelicules en ordre alfabètic.
      *   
      *   @args: int;
      *   @return: ArrayList <String> Aquest no més son Strings, no els objectes.
      *   OCO!
      */
-    static public ArrayList<String> buscarLloguer(ArrayList<Pelicula> pelicula){
+    static public ArrayList<String> buscarPelicules(ArrayList<Pelicula> pelicula){
         
         Pelicula peli = new Pelicula();
         ArrayList<String> listaOrd = new ArrayList<>();
@@ -58,6 +58,29 @@ public class Videoclub implements Serializable {
          for(int i = 0; i<=pelicula.size()-1; i++){
             peli = pelicula.get(i);
             listaOrd.add(peli.getNom());
+        }
+   
+        Collections.sort(listaOrd);
+
+        return listaOrd;
+
+    }
+    
+    /*
+     *   Métode per a cercar les series en ordre alfabètic.
+     *   
+     *   @args: int;
+     *   @return: ArrayList <String> Aquest no més son Strings, no els objectes.
+     *   OCO!
+     */
+    static public ArrayList<String> buscarSeries(ArrayList<Serie> series){
+        
+        Serie serie = new Serie();
+        ArrayList<String> listaOrd = new ArrayList<>();
+        
+         for(int i = 0; i<=series.size()-1; i++){
+             serie = series.get(i);
+            listaOrd.add(serie.getNom());
         }
    
         Collections.sort(listaOrd);
@@ -191,7 +214,7 @@ public class Videoclub implements Serializable {
      *
      */
     public void filtrarContingut() {
-
+        
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
@@ -199,8 +222,20 @@ public class Videoclub implements Serializable {
 
         carregarBD(usuarios, peliculas, series);
         
-
-        
+        Pelicula peli;
+        Serie serie;
+    
+        for (int i = 0; i < 20; i++) {
+            peli = peliculas.get(i);
+            System.out.println(peli.getNom());
+            System.out.println(peli.getCategoria() + " " + i);
+            
+            if (i < 13) {
+                serie = series.get(i);
+                System.out.println(serie.getNom());
+                System.out.println(serie.getCategoria() + " " + i + " serie");
+            }
+        }
         
         /*
          *  Aquest for de davant el vam fer servir per a plenar els objectes que vam crear manualment en el codi.
