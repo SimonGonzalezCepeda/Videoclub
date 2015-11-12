@@ -15,6 +15,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.FileInputStream;
 import java.io.*;
+import javax.swing.*;
 
 /**
  *
@@ -30,6 +31,9 @@ public class Videoclub implements Serializable {
     public static ArrayList<Usuari> usuarios = new ArrayList<>();
     public static ArrayList<Pelicula> peliculas = new ArrayList<>();
     public static ArrayList<Serie> series = new ArrayList<>();
+    public static ArrayList<Usuari> usuaris;
+    public static ArrayList<Pelicula> pelicules;
+    public static ArrayList<Serie> serios;
 
     /*
      *   Constructor
@@ -64,7 +68,7 @@ public class Videoclub implements Serializable {
 
         return listaOrd;
 
-    }
+    }//end buscarPelicules
     
     /*
      *   Métode per a cercar les series en ordre alfabètic.
@@ -87,7 +91,7 @@ public class Videoclub implements Serializable {
 
         return listaOrd;
 
-    }
+    }//end buscarSeries
 
     /*
      *   Mètode per a que els usuaris es puguin conectar.
@@ -95,7 +99,7 @@ public class Videoclub implements Serializable {
      */
     public void loguejar() {
 
-    }
+    }//end loguejar
 
     /*
      *   Mètode amb el que es carrega tota l'informació en variables.
@@ -163,7 +167,7 @@ public class Videoclub implements Serializable {
             }
         }//endwhile
 
-    }
+    }//end carregarBD
 
 
     /*
@@ -206,16 +210,49 @@ public class Videoclub implements Serializable {
                 break;
             }//endtry
         }//endfor
-
-    }
+    }//end desarBD
 
     /*
      *   Mètode amb el que filtrem els continguts de les búsquedes.
      *
      */
-    public void filtrarContingut() {
+    public ArrayList<String> filtrarContingut(JButton boto) {
         
-    }
+        String peli;
+        String serie;
+        int i;
+        ArrayList<String> pels = new ArrayList<>();
+        ArrayList<String> sers = new ArrayList<>();
+        ArrayList<String> lista = new ArrayList<>();
+        
+        if("Aventuras".equals(boto.getText())){
+            pels = buscarPelicules(peliculas);   //Estes dos Arrays son per a inicialitzar el metode.
+            sers = buscarSeries(series);
+            for(i = 0; i < peliculas.size(); i++){
+                peli = pels.get(i);
+                lista.add(peli);
+                if(i<series.size()){
+                    serie = sers.get(i);
+                }
+            }
+        }else if("Humor".equals(boto.getText())){
+        
+        }else if("Acción".equals(boto.getText())){
+        
+        }else if("Fantasia".equals(boto.getText())){
+        
+        }else if("Gore".equals(boto.getText())){
+        
+        }else if("Intriga".equals(boto.getText())){
+        
+        }else if("Drama".equals(boto.getText())){
+        
+        }else{
+            
+        }
+        
+        
+    }//end filtrarContingut
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         // TODO code application logic here
@@ -227,12 +264,10 @@ public class Videoclub implements Serializable {
     
         for (int i = 0; i < 20; i++) {
             peli = peliculas.get(i);
-            System.out.println(peli.getNom());
             System.out.println(peli.getCategoria() + " " + i);
             
             if (i < 13) {
                 serie = series.get(i);
-                System.out.println(serie.getNom());
                 System.out.println(serie.getCategoria() + " " + i + " serie");
             }
         }
