@@ -31,86 +31,103 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        BotoAlquilar = new javax.swing.JButton();
+        BotoCategoria = new javax.swing.JButton();
+        BotoPerfil = new javax.swing.JButton();
+        BotoDesconectar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 0, 51));
 
-        jScrollPane1.setBackground(new java.awt.Color(0, 0, 255));
-
-        jTextPane1.setEditable(false);
-        jTextPane1.setBackground(new java.awt.Color(51, 51, 51));
-        jTextPane1.setBorder(null);
-        jTextPane1.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
-        jTextPane1.setForeground(new java.awt.Color(204, 255, 0));
-        jTextPane1.setText("Videoclub");
-        jScrollPane1.setViewportView(jTextPane1);
-
-        jButton1.setBackground(new java.awt.Color(204, 204, 0));
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Alquilar");
-
-        jButton2.setBackground(new java.awt.Color(204, 204, 0));
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("Categorias");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        BotoAlquilar.setBackground(new java.awt.Color(0, 0, 102));
+        BotoAlquilar.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        BotoAlquilar.setForeground(new java.awt.Color(204, 204, 0));
+        BotoAlquilar.setText("Alquilar");
+        BotoAlquilar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                BotoAlquilarActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(204, 204, 0));
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("Mi Perfil");
+        BotoCategoria.setBackground(new java.awt.Color(0, 0, 102));
+        BotoCategoria.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        BotoCategoria.setForeground(new java.awt.Color(204, 204, 0));
+        BotoCategoria.setText("Categorias");
+        BotoCategoria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotoCategoriaActionPerformed(evt);
+            }
+        });
 
-        jButton4.setBackground(new java.awt.Color(204, 204, 0));
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
-        jButton4.setText("Desconectar");
+        BotoPerfil.setBackground(new java.awt.Color(0, 0, 102));
+        BotoPerfil.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        BotoPerfil.setForeground(new java.awt.Color(204, 204, 0));
+        BotoPerfil.setText("Mi Perfil");
+
+        BotoDesconectar.setBackground(new java.awt.Color(0, 0, 102));
+        BotoDesconectar.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        BotoDesconectar.setForeground(new java.awt.Color(204, 204, 0));
+        BotoDesconectar.setText("Desconectar");
+
+        jLabel2.setFont(new java.awt.Font("Ubuntu", 0, 48)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 204, 0));
+        jLabel2.setText("Videoclub");
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("/home/pau/Documentos/Programacio_Acces_Dades/Videoclub/images/videoclub.png")); // NOI18N
+        jLabel3.setText("jLabel3");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(228, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(192, 192, 192))
             .addGroup(layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(BotoCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotoPerfil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotoDesconectar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotoAlquilar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(147, 147, 147))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(jButton1)
-                .addGap(36, 36, 36)
-                .addComponent(jButton2)
-                .addGap(36, 36, 36)
-                .addComponent(jButton3)
-                .addGap(36, 36, 36)
-                .addComponent(jButton4)
-                .addContainerGap(128, Short.MAX_VALUE))
+                .addGap(35, 35, 35)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addComponent(BotoAlquilar)
+                        .addGap(62, 62, 62)
+                        .addComponent(BotoCategoria)
+                        .addGap(62, 62, 62)
+                        .addComponent(BotoPerfil)
+                        .addGap(59, 59, 59)
+                        .addComponent(BotoDesconectar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void BotoCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotoCategoriaActionPerformed
         // TODO add your handling code here:    
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_BotoCategoriaActionPerformed
+
+    private void BotoAlquilarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotoAlquilarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotoAlquilarActionPerformed
     
     /**
      *
@@ -149,12 +166,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JButton BotoAlquilar;
+    private javax.swing.JButton BotoCategoria;
+    private javax.swing.JButton BotoDesconectar;
+    private javax.swing.JButton BotoPerfil;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 
 }
