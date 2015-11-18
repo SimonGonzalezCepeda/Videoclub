@@ -23,6 +23,10 @@ public class Usuari implements Serializable {
     
     private String ciutat = new String();
     
+    private String userName = new String();
+    
+    private String password = new String();
+    
     private int telefon, numTargeta, codiPostal;
     
     ArrayList <Lloguer> lloguers;
@@ -89,6 +93,10 @@ public class Usuari implements Serializable {
     public String getDireccio() {
         return direccio;
     }
+    
+    public String getPassword() {
+        return password;
+    }
 
     public void setDireccio(String direccio) {
         this.direccio = direccio;
@@ -104,6 +112,10 @@ public class Usuari implements Serializable {
 
     public int getTelefon() {
         return telefon;
+    }
+    
+    public String getUserName() {
+        return userName;
     }
 
     public void setTelefon(int telefon) {
@@ -124,6 +136,14 @@ public class Usuari implements Serializable {
 
     public void setCodiPostal(int codiPostal) {
         this.codiPostal = codiPostal;
+    }
+    
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+    
+    public void setPassword(String password) {
+        this.password = password;
     }
         
     
