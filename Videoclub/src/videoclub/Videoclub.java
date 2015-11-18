@@ -250,6 +250,7 @@ public class Videoclub implements Serializable {
         }else{
             
         }
+        return null;
         } //end filtrarContingut
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {

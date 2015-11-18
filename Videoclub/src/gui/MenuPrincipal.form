@@ -148,9 +148,8 @@
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="/home/pau/Documentos/Programacio_Acces_Dades/Videoclub/images/videoclub.png"/>
+          <Image iconType="1" name="http://www.diesl.com/wp-content/uploads/2012/03/peliculas-gratis-330x200.png"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="jLabel3"/>
       </Properties>
     </Component>
   </SubComponents>

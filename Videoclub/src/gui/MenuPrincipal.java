@@ -75,8 +75,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(204, 204, 0));
         jLabel2.setText("Videoclub");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("/home/pau/Documentos/Programacio_Acces_Dades/Videoclub/images/videoclub.png")); // NOI18N
-        jLabel3.setText("jLabel3");
+        jLabel3.setIcon(new javax.swing.JLabel() {
+            public javax.swing.Icon getIcon() {
+                try {
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL("http://www.diesl.com/wp-content/uploads/2012/03/peliculas-gratis-330x200.png")
+                    );
+                } catch (java.net.MalformedURLException e) {
+                }
+                return null;
+            }
+        }.getIcon());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

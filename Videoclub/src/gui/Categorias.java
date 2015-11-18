@@ -38,6 +38,7 @@ public class Categorias extends javax.swing.JFrame {
         CategoriesPelis = new javax.swing.JComboBox();
         BotoFiltrarSeries = new javax.swing.JButton();
         BotoFiltrarPelis = new javax.swing.JButton();
+        BotoTornarMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,6 +71,11 @@ public class Categorias extends javax.swing.JFrame {
             }
         });
 
+        BotoTornarMenu.setBackground(new java.awt.Color(204, 204, 0));
+        BotoTornarMenu.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        BotoTornarMenu.setForeground(new java.awt.Color(0, 0, 102));
+        BotoTornarMenu.setText("Menú Principal");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -100,6 +106,10 @@ public class Categorias extends javax.swing.JFrame {
                     .addComponent(CategoriesPelis, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BotoFiltrarPelis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(107, 107, 107))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BotoTornarMenu)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,7 +132,9 @@ public class Categorias extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotoFiltrarSeries)
                     .addComponent(BotoFiltrarPelis))
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                .addComponent(BotoTornarMenu)
+                .addContainerGap())
         );
 
         pack();
@@ -170,6 +182,7 @@ public class Categorias extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotoFiltrarPelis;
     private javax.swing.JButton BotoFiltrarSeries;
+    private javax.swing.JButton BotoTornarMenu;
     private javax.swing.JComboBox CategoriesPelis;
     private javax.swing.JComboBox CategoriesSerie;
     private javax.swing.JLabel jLabel1;
