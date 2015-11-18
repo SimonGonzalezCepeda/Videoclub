@@ -31,13 +31,13 @@ public class Videoclub implements Serializable {
     public static ArrayList<Usuari> usuarios = new ArrayList<>();
     public static ArrayList<Pelicula> peliculas = new ArrayList<>();
     public static ArrayList<Serie> series = new ArrayList<>();
-    public static ArrayList<Usuari> usuaris;
-    public static ArrayList<Pelicula> pelicules;
-    public static ArrayList<Serie> serios;
+    private ArrayList<Usuari> usuaris;
+    
 
     /*
      *   Constructor
      */
+    
     public Videoclub() {
         usuari = new Usuari();
         lloguer = new Lloguer();
@@ -54,22 +54,23 @@ public class Videoclub implements Serializable {
      *   @return: ArrayList <String> Aquest no més son Strings, no els objectes.
      *   OCO!
      */
-    static public ArrayList<String> buscarPelicules(ArrayList<Pelicula> pelicula){
-        
+    
+    static public ArrayList<String> buscarPeliculas(ArrayList<Pelicula> pelicula) {
+
         Pelicula peli = new Pelicula();
         ArrayList<String> listaOrd = new ArrayList<>();
-        
-         for(int i = 0; i<=pelicula.size()-1; i++){
+
+        for (int i = 0; i <= pelicula.size() - 1; i++) {
             peli = pelicula.get(i);
             listaOrd.add(peli.getNom());
         }
-   
+
         Collections.sort(listaOrd);
 
         return listaOrd;
 
     }//end buscarPelicules
-    
+
     /*
      *   Métode per a cercar les series en ordre alfabètic.
      *   
@@ -77,16 +78,17 @@ public class Videoclub implements Serializable {
      *   @return: ArrayList <String> Aquest no més son Strings, no els objectes.
      *   OCO!
      */
-    static public ArrayList<String> buscarSeries(ArrayList<Serie> series){
-        
+    
+    static public ArrayList<String> buscarSeries(ArrayList<Serie> serios) {
+
         Serie serie = new Serie();
         ArrayList<String> listaOrd = new ArrayList<>();
-        
-         for(int i = 0; i<=series.size()-1; i++){
-             serie = series.get(i);
+
+        for (int i = 0; i <= serios.size() - 1; i++) {
+            serie = serios.get(i);
             listaOrd.add(serie.getNom());
         }
-   
+
         Collections.sort(listaOrd);
 
         return listaOrd;
@@ -97,6 +99,7 @@ public class Videoclub implements Serializable {
      *   Mètode per a que els usuaris es puguin conectar.
      *
      */
+    
     public void loguejar() {
 
     }//end loguejar
@@ -104,7 +107,11 @@ public class Videoclub implements Serializable {
     /*
      *   Mètode amb el que es carrega tota l'informació en variables.
      *
+     *   @args: ArrayList<Usuari>, ArrayList<Pelicula>, ArrayList<Serie>;
+     *   @return: void: Carrega l'informació a les variables cridades. Feu servir les globals sempre!
+     *      
      */
+    
     static public void carregarBD(ArrayList<Usuari> usuaris, ArrayList<Pelicula> pelicules, ArrayList<Serie> series) throws IOException {
         ObjectInputStream master;
         int i = 0;
@@ -173,6 +180,9 @@ public class Videoclub implements Serializable {
     /*
      *   Mètode amb el que es desa tota l'informació en variables.
      *
+     *   @args: ArrayList<Usuari>,  ArrayList<Pelicula>, ArrayList<Serie>;
+     *   @return: void: Desa les arrays en els fitxers. Feu servir les globals sempre!
+     *
      */
     static public void desarBD(ArrayList<Usuari> usuaris, ArrayList<Pelicula> pelicules, ArrayList<Serie> series) throws IOException {
         ObjectOutputStream master;
@@ -213,64 +223,96 @@ public class Videoclub implements Serializable {
     }//end desarBD
 
     /*
-     *   Mètode amb el que filtrem els continguts de les búsquedes.
+     *  Es filtren els objectes de Series o Pelicules dels arrays globals per la categoria demanada
+     *  i es retorna a un Array de strings ordenat alfabèticament. Es fa servir la funció buscar*();
+     *  
+     *   @args: String, String;
+     *   @return: ArrayList<String>; NO OBJECTS!
      *
      */
-    public ArrayList<String> filtrarContingut(JButton boto) {
-        
+    static public ArrayList<String> filtrarContingut(String clase, String categoria) {
+
         String peli;
         String serie;
         int i;
         ArrayList<String> pels = new ArrayList<>();
-        ArrayList<String> sers = new ArrayList<>();
+        ArrayList<String> sers;
         ArrayList<String> lista = new ArrayList<>();
-        
-        if("Aventuras".equals(boto.getText())){
-            pels = buscarPelicules(peliculas);   //Estes dos Arrays son per a inicialitzar el metode.
-            sers = buscarSeries(series);
-            for(i = 0; i < peliculas.size(); i++){
-                peli = pels.get(i);
-                lista.add(peli);
-                if(i<series.size()){
-                    serie = sers.get(i);
-                }
+
+        if ("Pelicula".equals(clase)) {
+            Pelicula objectPel;
+            ArrayList<Pelicula> pelicules = new ArrayList<>();
+            for (i = 0; i < peliculas.size(); i++) {
+                objectPel = peliculas.get(i);
+                if(categoria.equals(objectPel.getCategoria())){
+                    pelicules.add(objectPel);
+                }    
             }
-        }else if("Humor".equals(boto.getText())){
-        
-        }else if("Acción".equals(boto.getText())){
-        
-        }else if("Fantasia".equals(boto.getText())){
-        
-        }else if("Gore".equals(boto.getText())){
-        
-        }else if("Intriga".equals(boto.getText())){
-        
-        }else if("Drama".equals(boto.getText())){
-        
-        }else{
-            
+            lista = buscarPeliculas(pelicules);
+            return lista;
+        } else if ("Serie".equals(clase)) {
+            Serie objectSerie;
+            ArrayList<Serie> serios = new ArrayList<>();
+            for (i = 0; i < series.size(); i++) {
+                objectSerie = series.get(i);
+                if(categoria.equals(objectSerie.getCategoria())){
+                    serios.add(objectSerie);
+                }    
+            }
+            lista = buscarSeries(serios);
+            return lista;
+        } else {
+            System.out.println("Error al trobar la categoria.");
+            return lista;
         }
-        
-        
     }//end filtrarContingut
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         // TODO code application logic here
 
         carregarBD(usuarios, peliculas, series);
-        
+
         Pelicula peli;
         Serie serie;
-    
-        for (int i = 0; i < 20; i++) {
+        int i;
+
+        /*for ( i = 0; i < 20; i++) {
             peli = peliculas.get(i);
             System.out.println(peli.getCategoria() + " " + i);
-            
+
             if (i < 13) {
                 serie = series.get(i);
                 System.out.println(serie.getCategoria() + " " + i + " serie");
             }
+        }*/
+        
+        ArrayList<String> listadoSer = new ArrayList<>();
+        ArrayList<String> listadoPel;
+        
+        listadoPel = buscarPeliculas(peliculas);
+        
+        String text = new String();
+        
+//        for (i=0; i < listadoPel.size();i++){
+//            text= listadoPel.get(i);
+//            System.out.println(text);
+//        }
+//        filtrarContingut("Serie","Aventuras",listadoSer);
+//        
+//        for ( i=0; i < listadoSer.size(); i++){
+//            text = listadoSer.get(i);
+//            System.out.println(text);
+//            System.out.println("chivato final");
+//        }
+
+        
+        listadoPel = filtrarContingut("Pelicula","Acción");
+        
+        for ( i=0; i < listadoPel.size(); i++){
+            text = listadoPel.get(i);
+            System.out.println(text);
         }
+        
         
         /*
          *  Aquest for de davant el vam fer servir per a plenar els objectes que vam crear manualment en el codi.
@@ -278,7 +320,6 @@ public class Videoclub implements Serializable {
          *  trobar en GitHub en el següent commit.
          *  https://github.com/SimonGonzalezCepeda/Videoclub/tree/9d5445bd9b329f60bd7b10c8a9bf510a086caadd
          */
-        
 //        int i, j;
 //
 //        for (j = 0; j < series.size(); j++) {
@@ -320,8 +361,6 @@ public class Videoclub implements Serializable {
 //
 //            } //end2nfor
 //        } //end1rfor
-
     } //endmain
-    
 
 } //endclass
