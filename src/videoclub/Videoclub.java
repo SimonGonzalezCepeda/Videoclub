@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package videoclub;
+import gui.Login;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -31,8 +32,7 @@ public class Videoclub implements Serializable {
     public static ArrayList<Usuari> usuarios = new ArrayList<>();
     public static ArrayList<Pelicula> peliculas = new ArrayList<>();
     public static ArrayList<Serie> series = new ArrayList<>();
-    private ArrayList<Usuari> usuaris;
-    
+
 
     /*
      *   Constructor
@@ -100,8 +100,8 @@ public class Videoclub implements Serializable {
      *
      */
     
-    public void loguejar() {
-
+    public void loguejar(String username, String contraseña) {
+        
     }//end loguejar
 
     /*
@@ -269,49 +269,42 @@ public class Videoclub implements Serializable {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         // TODO code application logic here
-
+        
         carregarBD(usuarios, peliculas, series);
-
-        Pelicula peli;
-        Serie serie;
-        int i;
-
-        /*for ( i = 0; i < 20; i++) {
-            peli = peliculas.get(i);
-            System.out.println(peli.getCategoria() + " " + i);
-
-            if (i < 13) {
-                serie = series.get(i);
-                System.out.println(serie.getCategoria() + " " + i + " serie");
-            }
-        }*/
         
-        ArrayList<String> listadoSer = new ArrayList<>();
-        ArrayList<String> listadoPel;
-        
-        listadoPel = buscarPeliculas(peliculas);
-        
-        String text = new String();
-        
+//        Pelicula peli;
+//        Serie serie;
+//        int i;
+//
+//        for ( i = 0; i < 20; i++) {
+//            peli = peliculas.get(i);
+//            System.out.println(peli.getCategoria() + " " + i);
+//
+//            if (i < 13) {
+//                serie = series.get(i);
+//                System.out.println(serie.getCategoria() + " " + i + " serie");
+//            }
+//        }
+//        
+//        ArrayList<String> listadoSer = new ArrayList<>();
+//        ArrayList<String> listadoPel;
+//        
+//        listadoPel = buscarPeliculas(peliculas);
+//        
+//        String text = new String();
+//        
 //        for (i=0; i < listadoPel.size();i++){
 //            text= listadoPel.get(i);
 //            System.out.println(text);
 //        }
-//        filtrarContingut("Serie","Aventuras",listadoSer);
+//
 //        
-//        for ( i=0; i < listadoSer.size(); i++){
-//            text = listadoSer.get(i);
+//        listadoPel = filtrarContingut("Pelicula","Acción");
+//        
+//        for ( i=0; i < listadoPel.size(); i++){
+//            text = listadoPel.get(i);
 //            System.out.println(text);
-//            System.out.println("chivato final");
 //        }
-
-        
-        listadoPel = filtrarContingut("Pelicula","Acción");
-        
-        for ( i=0; i < listadoPel.size(); i++){
-            text = listadoPel.get(i);
-            System.out.println(text);
-        }
         
         
         /*
