@@ -105,7 +105,11 @@
                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                       <Component id="jScrollPane8" min="-2" pref="71" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
+<<<<<<< HEAD
                       <Component id="jPasswordFieldPassword" min="-2" pref="116" max="-2" attributes="0"/>
+=======
+                      <Component id="jPasswordField" min="-2" pref="116" max="-2" attributes="0"/>
+>>>>>>> 6d4e1d9e4cd82632590a468c69b13a952ed375fa
                       <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
@@ -177,7 +181,11 @@
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jScrollPane8" min="-2" max="-2" attributes="0"/>
+<<<<<<< HEAD
                   <Component id="jPasswordFieldPassword" min="-2" pref="23" max="-2" attributes="0"/>
+=======
+                  <Component id="jPasswordField" min="-2" pref="23" max="-2" attributes="0"/>
+>>>>>>> 6d4e1d9e4cd82632590a468c69b13a952ed375fa
                   <Component id="jScrollPane6" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextFieldUsername" min="-2" pref="23" max="-2" attributes="0"/>
               </Group>
@@ -490,7 +498,11 @@
         </Component>
       </SubComponents>
     </Container>
+<<<<<<< HEAD
     <Component class="javax.swing.JPasswordField" name="jPasswordFieldPassword">
+=======
+    <Component class="javax.swing.JPasswordField" name="jPasswordField">
+>>>>>>> 6d4e1d9e4cd82632590a468c69b13a952ed375fa
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>

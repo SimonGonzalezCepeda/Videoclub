@@ -57,6 +57,14 @@
               </Group>
               <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
           </Group>
+<<<<<<< HEAD
+=======
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="BotoTornarMenu" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+>>>>>>> 6d4e1d9e4cd82632590a468c69b13a952ed375fa
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -84,7 +92,13 @@
                   <Component id="BotoFiltrarSeries" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="BotoFiltrarPelis" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
+<<<<<<< HEAD
               <EmptySpace pref="119" max="32767" attributes="0"/>
+=======
+              <EmptySpace pref="84" max="32767" attributes="0"/>
+              <Component id="BotoTornarMenu" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+>>>>>>> 6d4e1d9e4cd82632590a468c69b13a952ed375fa
           </Group>
       </Group>
     </DimensionLayout>
@@ -179,5 +193,22 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotoFiltrarPelisActionPerformed"/>
       </Events>
     </Component>
+<<<<<<< HEAD
+=======
+    <Component class="javax.swing.JButton" name="BotoTornarMenu">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="cc" red="cc" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="11" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="0" red="0" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Men&#xfa; Principal"/>
+      </Properties>
+    </Component>
+>>>>>>> 6d4e1d9e4cd82632590a468c69b13a952ed375fa
   </SubComponents>
 </Form>
