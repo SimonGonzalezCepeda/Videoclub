@@ -119,6 +119,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Mi Perfil"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotoPerfilActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BotoDesconectar">
       <Properties>
@@ -133,6 +136,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Desconectar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotoDesconectarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>

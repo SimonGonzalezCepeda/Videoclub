@@ -361,6 +361,9 @@ public class Usuario extends javax.swing.JFrame {
 
     private void BotoTornarMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotoTornarMenuActionPerformed
         // TODO add your handling code here:
+              MenuPrincipal frame = new MenuPrincipal();  
+              frame.show();
+              dispose();
     }//GEN-LAST:event_BotoTornarMenuActionPerformed
 
     private void ModificarDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarDniActionPerformed

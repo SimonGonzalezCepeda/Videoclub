@@ -4,15 +4,20 @@
  * and open the template in the editor.
  */
 package gui;
+
 import javax.swing.JLabel;
 import videoclub.Videoclub;
-
+import javax.swing.JOptionPane;
+import javax.swing.JButton;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
  * @author pau
  */
 public class MenuPrincipal extends javax.swing.JFrame {
+
     private Object jLabel1;
 
     /**
@@ -65,11 +70,21 @@ public class MenuPrincipal extends javax.swing.JFrame {
         BotoPerfil.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
         BotoPerfil.setForeground(new java.awt.Color(204, 204, 0));
         BotoPerfil.setText("Mi Perfil");
+        BotoPerfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotoPerfilActionPerformed(evt);
+            }
+        });
 
         BotoDesconectar.setBackground(new java.awt.Color(0, 0, 102));
         BotoDesconectar.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
         BotoDesconectar.setForeground(new java.awt.Color(204, 204, 0));
         BotoDesconectar.setText("Desconectar");
+        BotoDesconectar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotoDesconectarActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Ubuntu", 0, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 204, 0));
@@ -131,13 +146,33 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotoCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotoCategoriaActionPerformed
-        // TODO add your handling code here:    
+        // TODO add your handling code here:  
+              Categorias frame = new Categorias();  
+              frame.show();
+              dispose();
     }//GEN-LAST:event_BotoCategoriaActionPerformed
 
     private void BotoAlquilarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotoAlquilarActionPerformed
         // TODO add your handling code here:
+              Listado frame = new Listado();  
+              frame.show();
+              dispose();
     }//GEN-LAST:event_BotoAlquilarActionPerformed
-    
+
+    private void BotoDesconectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotoDesconectarActionPerformed
+        // TODO add your handling code here:
+              Login frame = new Login();  
+              frame.show();
+              dispose();
+    }//GEN-LAST:event_BotoDesconectarActionPerformed
+
+    private void BotoPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotoPerfilActionPerformed
+        // TODO add your handling code here:
+              Usuario frame = new Usuario();  
+              frame.show();
+              dispose();
+    }//GEN-LAST:event_BotoPerfilActionPerformed
+
     /**
      *
      * @param args the command line arguments

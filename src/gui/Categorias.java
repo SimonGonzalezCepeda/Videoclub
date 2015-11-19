@@ -75,6 +75,11 @@ public class Categorias extends javax.swing.JFrame {
         BotoTornarMenu.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
         BotoTornarMenu.setForeground(new java.awt.Color(0, 0, 102));
         BotoTornarMenu.setText("Menú Principal");
+        BotoTornarMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotoTornarMenuActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -143,6 +148,13 @@ public class Categorias extends javax.swing.JFrame {
     private void BotoFiltrarPelisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotoFiltrarPelisActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BotoFiltrarPelisActionPerformed
+
+    private void BotoTornarMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotoTornarMenuActionPerformed
+        // TODO add your handling code here:
+              MenuPrincipal frame = new MenuPrincipal();  
+              frame.show();
+              dispose();
+    }//GEN-LAST:event_BotoTornarMenuActionPerformed
 
     /**
      * @param args the command line arguments
