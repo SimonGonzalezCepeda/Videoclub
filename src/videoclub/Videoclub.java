@@ -29,9 +29,9 @@ public class Videoclub implements Serializable {
     private static final String rutaSer = "BD/series.bin";
     public Usuari usuari;
     public Lloguer lloguer;
-    public static ArrayList<Usuari> usuarios = new ArrayList<>();
-    public static ArrayList<Pelicula> peliculas = new ArrayList<>();
-    public static ArrayList<Serie> series = new ArrayList<>();
+    public static final ArrayList<Usuari> usuarios = new ArrayList<>();
+    public static final ArrayList<Pelicula> peliculas = new ArrayList<>();
+    public static final ArrayList<Serie> series = new ArrayList<>();
 
 
     /*
@@ -94,15 +94,6 @@ public class Videoclub implements Serializable {
         return listaOrd;
 
     }//end buscarSeries
-
-    /*
-     *   Mètode per a que els usuaris es puguin conectar.
-     *
-     */
-    
-    public void loguejar(String username, String contraseña) {
-        
-    }//end loguejar
 
     /*
      *   Mètode amb el que es carrega tota l'informació en variables.
@@ -271,6 +262,10 @@ public class Videoclub implements Serializable {
         // TODO code application logic here
         
         carregarBD(usuarios, peliculas, series);
+        
+        Login login = new Login();
+        
+        login.setVisible(true);
         
 //        Pelicula peli;
 //        Serie serie;

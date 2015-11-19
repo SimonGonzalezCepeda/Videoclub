@@ -4,7 +4,10 @@
  * and open the template in the editor.
  */
 package gui;
+
 import videoclub.Videoclub;
+import videoclub.Usuari;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -135,6 +138,20 @@ public class Login extends javax.swing.JFrame {
 
     private void BotoLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotoLoginActionPerformed
         // TODO add your handling code here:
+        //char password[]=txtPass.getPassword();
+        String contraseña = new String();
+        Usuari usuario;
+        int i;
+        for (i = 0; i < Videoclub.usuarios.size(); i++) {
+            usuario = Videoclub.usuarios.get(i);
+            if (jUserField.getText().equals(usuario.getUserName()) && jPasswordField.getText().equals(usuario.getPassword())) {
+                this.dispose();
+                MenuPrincipal menu = new MenuPrincipal();
+                menu.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(null, "Error:\n" + "Combinación de usuario y contraseña incorrecta.", "Error 001", WIDTH, null);
+            }
+        }
     }//GEN-LAST:event_BotoLoginActionPerformed
 
     private void jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldActionPerformed
