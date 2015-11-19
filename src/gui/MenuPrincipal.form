@@ -148,14 +148,8 @@
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-<<<<<<< HEAD
-          <Image iconType="2" name="/home/pau/Documentos/Programacio_Acces_Dades/Videoclub/images/videoclub.png"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="jLabel3"/>
-=======
           <Image iconType="1" name="http://www.diesl.com/wp-content/uploads/2012/03/peliculas-gratis-330x200.png"/>
         </Property>
->>>>>>> 6d4e1d9e4cd82632590a468c69b13a952ed375fa
       </Properties>
     </Component>
   </SubComponents>

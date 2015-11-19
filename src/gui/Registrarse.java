@@ -55,11 +55,7 @@ public class Registrarse extends javax.swing.JFrame {
         jTextPane9 = new javax.swing.JTextPane();
         jScrollPane10 = new javax.swing.JScrollPane();
         jTextPane10 = new javax.swing.JTextPane();
-<<<<<<< HEAD
-        jPasswordFieldPassword = new javax.swing.JPasswordField();
-=======
         jPasswordField = new javax.swing.JPasswordField();
->>>>>>> 6d4e1d9e4cd82632590a468c69b13a952ed375fa
         BotoRegistrar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
@@ -162,13 +158,8 @@ public class Registrarse extends javax.swing.JFrame {
         jTextPane10.setText("CP");
         jScrollPane10.setViewportView(jTextPane10);
 
-<<<<<<< HEAD
-        jPasswordFieldPassword.setBackground(new java.awt.Color(255, 255, 255));
-        jPasswordFieldPassword.setForeground(new java.awt.Color(0, 0, 0));
-=======
         jPasswordField.setBackground(new java.awt.Color(255, 255, 255));
         jPasswordField.setForeground(new java.awt.Color(0, 0, 0));
->>>>>>> 6d4e1d9e4cd82632590a468c69b13a952ed375fa
 
         BotoRegistrar.setBackground(new java.awt.Color(0, 0, 102));
         BotoRegistrar.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
@@ -255,11 +246,7 @@ public class Registrarse extends javax.swing.JFrame {
                         .addGap(52, 52, 52)
                         .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-<<<<<<< HEAD
-                        .addComponent(jPasswordFieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-=======
                         .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
->>>>>>> 6d4e1d9e4cd82632590a468c69b13a952ed375fa
                         .addGap(121, 121, 121))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(BotoRegistrar)
@@ -315,11 +302,7 @@ public class Registrarse extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
-                    .addComponent(jPasswordFieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-=======
                     .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
->>>>>>> 6d4e1d9e4cd82632590a468c69b13a952ed375fa
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
@@ -380,11 +363,7 @@ public class Registrarse extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-<<<<<<< HEAD
-    private javax.swing.JPasswordField jPasswordFieldPassword;
-=======
     private javax.swing.JPasswordField jPasswordField;
->>>>>>> 6d4e1d9e4cd82632590a468c69b13a952ed375fa
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;

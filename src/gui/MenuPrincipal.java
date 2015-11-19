@@ -60,25 +60,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 BotoCategoriaActionPerformed(evt);
             }
         });
-<<<<<<< HEAD
-
-        BotoPerfil.setBackground(new java.awt.Color(0, 0, 102));
-        BotoPerfil.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        BotoPerfil.setForeground(new java.awt.Color(204, 204, 0));
-        BotoPerfil.setText("Mi Perfil");
-
-        BotoDesconectar.setBackground(new java.awt.Color(0, 0, 102));
-        BotoDesconectar.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        BotoDesconectar.setForeground(new java.awt.Color(204, 204, 0));
-        BotoDesconectar.setText("Desconectar");
-
-        jLabel2.setFont(new java.awt.Font("Ubuntu", 0, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 204, 0));
-        jLabel2.setText("Videoclub");
-
-        jLabel3.setIcon(new javax.swing.ImageIcon("/home/pau/Documentos/Programacio_Acces_Dades/Videoclub/images/videoclub.png")); // NOI18N
-        jLabel3.setText("jLabel3");
-=======
 
         BotoPerfil.setBackground(new java.awt.Color(0, 0, 102));
         BotoPerfil.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
@@ -105,7 +86,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 return null;
             }
         }.getIcon());
->>>>>>> 6d4e1d9e4cd82632590a468c69b13a952ed375fa
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
